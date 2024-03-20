@@ -21,4 +21,5 @@ export interface Experience {
 	location: string;
 	summary?: string;
 	responsibilities?: string[];
+	imageURL?: string;
 }
