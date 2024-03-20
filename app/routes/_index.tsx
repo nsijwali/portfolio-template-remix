@@ -6,7 +6,7 @@ import WorkPanel from '../src/screens/WorkPanel';
 
 export const loader = async () => {
 	try {
-		const response = await fetch(`/api/getUserDetails`);
+		const response = await fetch(`http://localhost:3000/api/getUserDetails`);
 
 		const userData = await response.json();
 		return {
