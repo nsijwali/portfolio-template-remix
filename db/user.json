@@ -1,0 +1,66 @@
+{
+	"name": "Nitin Sijwali",
+	"designation": "Senior Software Developer",
+	"role": "Frontend Developer",
+	"currentOrg": "Lowe's India",
+	"email": "sijwalinitin@gmail.com",
+	"location": "Bengaluru, Karnataka, India",
+	"area": "Bengaluru, KA",
+	"tagline": "Software Developer who cares deeply about good taste and User-Centric Design.",
+	"images": [""],
+	"skills": [
+		"Webpack",
+		"ReactJS",
+		"Redux.js",
+		"jQuery",
+		"Angular",
+		"TypeScript",
+		"JavaScript",
+		"Remix",
+		"Fullstory"
+	],
+	"summary": "Experienced Frontend Developer with a proven track record of delivering high-quality, scalable web applications. Specialized in React.js, Angular, JavaScript, and TypeScript. Adept at leading and mentoring junior developers to achieve project success. Passionate about crafting efficient and user-friendly interfaces that enhance the overall user experience. Seeking opportunities to contribute expertise in frontend development and leadership to dynamic teams.",
+	"honors_awards": ["Star Performer", "SPOT Award", "INSTA Award"],
+	"experience": [
+		{
+			"company": "Lowe's India",
+			"position": "Senior Software Engineer",
+			"duration": "January 2021 - Present",
+			"location": "Bengaluru, Karnataka, India",
+			"summary": "Involved in Item Group Management (IGM) for variations, collections, PCR , Item Relationships and digital assets for vendor and internal users to submit during item setup",
+			"responsibilities": [
+				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
+				"Built Reusable React components with modular CSS, and state management on the client with Redux",
+				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse",
+				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences.",
+				"Guiding juniors and mentoring them to build the bug free, well written optimzed code",
+				"Proving use case of functionalities using Fullstory analytics tool."
+			],
+			"imageURL": "https://i.postimg.cc/cLc64M7Y/project-lowes.png"
+		},
+		{
+			"company": "Publicis Sapient",
+			"position": "Associate, Experienced Technology L2",
+			"duration": "September 2019 - January 2021",
+			"location": "Bengaluru, KA",
+			"responsibilities": [
+				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
+				"Built Reusable React components with modular CSS, and state management on the client with Redux.",
+				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse.",
+				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences."
+			]
+		},
+		{
+			"company": "Infosys",
+			"position": "Senior Systems Engineer",
+			"duration": "October 2016 - August 2019",
+			"location": "Bengaluru, KA",
+			"responsibilities": [
+				"Designed user-friendly websites with Javascript, it's framework, and libraries.",
+				"Collaborated with the team to create projects at various stages of the project's lifecycle.",
+				"Reusable code and libraries were created for future use.",
+				"Bugs fixes and enhancements were implemented, which significantly improved web functionality and speed."
+			]
+		}
+	]
+}

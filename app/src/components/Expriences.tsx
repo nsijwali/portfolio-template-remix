@@ -1,7 +1,6 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Chrome } from './Styles';
-import imgLowes from '../assets/project_lowes.png';
 import { Experience } from './type';
 
 const Expriences = ({ experience = [] }: any) => {
@@ -12,7 +11,7 @@ const Expriences = ({ experience = [] }: any) => {
 					<div>{summary}</div>
 					<span>{company}</span>
 					<img
-						src={imgLowes}
+						src={experience?.imageURL}
 						className='project-thumbnail'
 						alt='project_lowes'
 					></img>

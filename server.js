@@ -3,6 +3,7 @@ import { installGlobals } from '@remix-run/node';
 import compression from 'compression';
 import express from 'express';
 import morgan from 'morgan';
+import userInfo from './fetchData.js';
 
 installGlobals();
 
@@ -42,13 +43,14 @@ if (viteDevServer) {
 // Everything else (like favicon.ico) is cached for an hour. You may want to be
 // more aggressive with this caching.
 app.use(express.static('build/client', { maxAge: '1h' }));
+app.use('/api', userInfo);
 
 app.use(morgan('tiny'));
 
 // handle SSR requests
 app.all('*', remixHandler);
 
-const port = process.env.PORT || 3100;
+const port = process.env.PORT || 3000;
 app.listen(port, () =>
 	console.log(`Express server listening at http://localhost:${port}`),
 );
