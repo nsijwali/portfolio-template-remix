@@ -5,7 +5,7 @@ import { Box } from '../src/components/Styles';
 import WorkPanel from '../src/screens/WorkPanel';
 
 export const loader = async () => {
-	const apiUrl = process.env.API_BASE_URL;
+	const apiUrl = process.env.API_BASE_URL || '';
 	const response = await fetch(`${apiUrl}/api/getUserDetails`);
 
 	const userData = await response.json();
