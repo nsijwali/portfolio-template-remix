@@ -9,6 +9,9 @@ dotenv.config();
 
 installGlobals();
 
+const port = process.env.PORT || '3000';
+const host = process.env.HOST || 'localhost';
+const env = process.env.NODE_ENV || 'development';
 const viteDevServer =
 	process.env.NODE_ENV === 'production'
 		? undefined
@@ -53,7 +56,7 @@ app.use(morgan('tiny'));
 // handle SSR requests
 app.all('*', remixHandler);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () =>
-	console.log(`Express server listening at http://localhost:${port}`),
-);
+app.listen(port, host, (error) => {
+	if (error) throw error;
+	console.log(`> Ready on http://${host}:${port}`);
+});
