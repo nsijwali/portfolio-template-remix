@@ -29,7 +29,7 @@ const remixHandler = createRequestHandler({
 });
 
 const app = express();
-
+app.use('/api', userInfo);
 app.use(compression());
 
 // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
@@ -48,7 +48,7 @@ if (viteDevServer) {
 
 // Everything else (like favicon.ico) is cached for an hour. You may want to be
 // more aggressive with this caching.
-app.use('/api', userInfo);
+
 app.use(express.static('build/client', { maxAge: '1h' }));
 
 app.use(morgan('tiny'));

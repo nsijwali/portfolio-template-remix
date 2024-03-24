@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import Header from '../src/components/Header';
 // import { Outlet } from '@remix-run/react';
 import { Box } from '../src/components/Styles';
