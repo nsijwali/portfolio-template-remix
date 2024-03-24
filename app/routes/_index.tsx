@@ -7,10 +7,9 @@ import WorkPanel from '../src/screens/WorkPanel';
 export const loader = async () => {
 	const isProduction = process?.env?.NODE_ENV === 'production';
 
-	console.log('env-->', process?.env?.NODE_ENV);
 	// Set the base URL based on the environment
 	const baseURL = isProduction
-		? 'https://portforlio-three.vercel.app'
+		? 'https://portforlio-three.vercel.app:3100'
 		: 'http://localhost:3000';
 
 	// Construct the URL for the Express API endpoint
@@ -23,15 +22,15 @@ export const loader = async () => {
 	if (!response.ok) {
 		throw new Error('Failed to fetch data from the API');
 	}
-	// const userData = await response.json();
+	const userData = await response.json();
 	console.log('data-->', response);
-	// return {
-	// 	status: 200,
-	// 	headers: {
-	// 		'Content-Type': 'application/json',
-	// 	},
-	// 	data: userData,
-	// };
+	return {
+		status: 200,
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		data: userData,
+	};
 };
 
 const Index = () => {
