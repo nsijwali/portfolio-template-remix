@@ -1,6 +1,4 @@
 import React from 'react';
-import pkg from '@remix-run/node';
-const { Request } = pkg;
 import Header from '../src/components/Header';
 import { Outlet } from '@remix-run/react';
 import { Box } from '../src/components/Styles';
