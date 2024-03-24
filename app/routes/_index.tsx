@@ -9,7 +9,9 @@ export const loader = async () => {
 	const isProduction = process?.env?.NODE_ENV === 'production';
 
 	// Set the base URL based on the environment
-	const baseURL = isProduction ? '' : 'http://localhost:3000';
+	const baseURL = isProduction
+		? 'https://portforlio-three.vercel.app'
+		: 'http://localhost:3000';
 
 	// Construct the URL for the Express API endpoint
 	const apiUrl = `${baseURL}/api/getUserDetails`;
