@@ -24,6 +24,7 @@ export const loader = async () => {
 		throw new Error('Failed to fetch data from the API');
 	}
 	const userData = await response.json();
+	console.log('data-->', userData);
 	return {
 		status: 200,
 		headers: {
