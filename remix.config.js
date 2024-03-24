@@ -5,7 +5,7 @@ module.exports = {
 	// assetsBuildDirectory: 'public/build',
 	// publicPath: '/build/',
 	// devServerPort: 8002,
-	ignoredRouteFiles: ['.*'],
+	ignoredRouteFiles: ['**/.*'],
 	future: {
 		v2_routeConvention: true,
 	},
