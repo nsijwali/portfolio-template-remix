@@ -34,7 +34,7 @@ app.use(compression());
 
 // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
 app.disable('x-powered-by');
-
+app.use('/api', userInfo);
 // handle asset requests
 if (viteDevServer) {
 	app.use(viteDevServer.middlewares);
@@ -49,7 +49,6 @@ if (viteDevServer) {
 // Everything else (like favicon.ico) is cached for an hour. You may want to be
 // more aggressive with this caching.
 app.use(express.static('build/client', { maxAge: '1h' }));
-app.use('/api', userInfo);
 
 app.use(morgan('tiny'));
 
