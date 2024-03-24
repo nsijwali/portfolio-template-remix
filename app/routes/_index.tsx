@@ -23,15 +23,15 @@ export const loader = async () => {
 	if (!response.ok) {
 		throw new Error('Failed to fetch data from the API');
 	}
-	const userData = await response.json();
-	console.log('data-->', userData);
-	return {
-		status: 200,
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		data: userData,
-	};
+	// const userData = await response.json();
+	console.log('data-->', response);
+	// return {
+	// 	status: 200,
+	// 	headers: {
+	// 		'Content-Type': 'application/json',
+	// 	},
+	// 	data: userData,
+	// };
 };
 
 const Index = () => {
