@@ -2,7 +2,7 @@
 
 module.exports = {
 	// appDirectory: 'app',
-	// assetsBuildDirectory: 'public/build',
+	assetsBuildDirectory: 'build/server',
 	// publicPath: '/build/',
 	// devServerPort: 8002,
 	// server: './server.js',
