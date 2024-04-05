@@ -4,6 +4,7 @@ import {
 	Outlet,
 	Scripts,
 	ScrollRestoration,
+	useRouteError,
 } from '@remix-run/react';
 // import { Outlet } from '@remix-run/react';
 import React from 'react';
@@ -23,6 +24,10 @@ export const meta = () => [
 			'portfolio, projects, skills, experiences, Nitin Sijwali, React.js, Reactjs, react, javascript, html, css, styled-components, frontend, ui, web, applications, remix, Remix, framework',
 	},
 ];
+
+export default function App() {
+	return <Outlet />;
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -48,7 +53,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
 		</html>
 	);
 }
+export function ErrorBoundary() {
+	const error = useRouteError();
 
-export default function App() {
-	return <Outlet />;
+	if (error.status) {
+		return (
+			<>
+				<h1>
+					{error.status} {error.statusText}
+				</h1>
+				<p>{error.data}</p>
+			</>
+		);
+	}
+
+	return (
+		<>
+			<h1>Error!</h1>
+			<p>{error?.message ?? 'Unknown error'}</p>
+		</>
+	);
 }
