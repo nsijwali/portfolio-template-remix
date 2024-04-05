@@ -29,7 +29,7 @@ const remixHandler = createRequestHandler({
 });
 
 const app = express();
-app.use('/', userInfo);
+app.use('/api', userInfo);
 app.use(compression());
 
 // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header

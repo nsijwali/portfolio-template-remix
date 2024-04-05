@@ -4,7 +4,7 @@ import userData from './db/user.json' assert { type: 'json' };
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/getUserDetails', (req, res) => {
 	res.json(userData);
 });
 
