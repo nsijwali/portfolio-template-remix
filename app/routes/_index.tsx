@@ -3,7 +3,7 @@ import Header from '../src/components/Header';
 import { Box } from '../src/components/Styles';
 import WorkPanel from '../src/screens/WorkPanel';
 
-export const loader = async () => {
+export const loader = async ({ request }) => {
 	const isProduction = process?.env?.NODE_ENV === 'production';
 
 	// Set the base URL based on the environment
@@ -15,7 +15,9 @@ export const loader = async () => {
 	const apiUrl = `${baseURL}/api/getUserDetails`;
 
 	// Fetch data from the Express API endpoint
-	const response = await fetch(apiUrl);
+	const response = await fetch(apiUrl, {
+		signal: request.signal,
+	});
 
 	// Handle response based on status
 	if (!response.ok) {
