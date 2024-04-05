@@ -3,7 +3,7 @@ import Header from '../src/components/Header';
 import { Box } from '../src/components/Styles';
 import WorkPanel from '../src/screens/WorkPanel';
 
-export const loader = async ({ request }: any) => {
+export const loader = async () => {
 	const isProduction = process?.env?.NODE_ENV === 'production';
 
 	// Set the base URL based on the environment
