@@ -12,6 +12,8 @@ installGlobals();
 const port = process.env.PORT || '3000';
 const host = process.env.HOST || 'localhost';
 const env = process.env.NODE_ENV || 'development';
+const app = express();
+app.use('/api', userInfo);
 const viteDevServer =
 	process.env.NODE_ENV === 'production'
 		? undefined
@@ -28,8 +30,6 @@ const remixHandler = createRequestHandler({
 	mode: process.env.NODE_ENV,
 });
 
-const app = express();
-app.use('/api', userInfo);
 app.use(compression());
 
 // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
