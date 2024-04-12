@@ -3,8 +3,8 @@ import { installGlobals } from '@remix-run/node';
 import compression from 'compression';
 import express from 'express';
 import morgan from 'morgan';
-import userInfo from './fetchData.js';
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 installGlobals();
@@ -12,8 +12,9 @@ installGlobals();
 const port = process.env.PORT || '3000';
 const host = process.env.HOST || 'localhost';
 const env = process.env.NODE_ENV || 'development';
+
 const app = express();
-app.use('/api', userInfo);
+
 const viteDevServer =
 	process.env.NODE_ENV === 'production'
 		? undefined
