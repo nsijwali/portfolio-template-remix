@@ -12,10 +12,10 @@ const BriefIntro = ({
 	return (
 		<Chrome
 			key={uuidv4()}
-			className='w-full sm:w-10/12 max-w-screen-2xl relative overflow-hidden rounded-3xl shadow-lg p-2 sm:h-96 xs:h-96 h-72'
+			className='w-full sm:w-10/12 max-w-screen-2xl relative overflow-hidden rounded-3xl shadow-lg p-1 sm:p-2 xs:p-2 sm:h-96 xs:h-96 h-72'
 		>
-			<div className='window-main rounded-2xl overflow-hidden h-full'>
-				<div className='window-bar'>
+			<div className='window-main sm:rounded-2xl rounded-3xl overflow-hidden h-full rounded-small'>
+				<div className='window-bar sm:h-10 justify-between items-center pl-5 pr-3 rounded-t-2xl'>
 					<div className='window-dots-wrapper'>
 						{['#f46b5d', '#f9bd4e', '#57c353'].map((clr) => (
 							<Dot key={clr} $color={clr} />
