@@ -7,7 +7,6 @@ import {
 	ScrollRestoration,
 	useRouteError,
 } from '@remix-run/react';
-// import { Outlet } from '@remix-run/react';
 import React from 'react';
 import stylesheet from '~/tailwind.css?url';
 
@@ -60,7 +59,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 	);
 }
 export function ErrorBoundary() {
-	const error = useRouteError();
+	const error: any = useRouteError();
 
 	if (error.status) {
 		return (

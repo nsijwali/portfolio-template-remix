@@ -34,7 +34,7 @@ If you're familiar with deploying Express applications you should be right at ho
 - `build/client`
 
 ```
-my-remix-app
+portfolio
 ├─ .eslintrc.cjs
 ├─ .gitignore
 ├─ README.md

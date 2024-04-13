@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../src/components/Header';
-import { Box } from '../src/components/Styles';
 import WorkPanel from '../src/screens/WorkPanel';
 import userInfo from '~/db/user.json';
 
