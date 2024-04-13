@@ -12,7 +12,7 @@ const BriefIntro = ({
 	return (
 		<Chrome
 			key={uuidv4()}
-			className='w-full sm:w-10/12 max-w-screen-2xl relative overflow-hidden rounded-3xl shadow-lg p-2 h-96'
+			className='w-full sm:w-10/12 max-w-screen-2xl relative overflow-hidden rounded-3xl shadow-lg p-2 sm:h-96 xs:h-96 h-72'
 		>
 			<div className='window-main rounded-2xl overflow-hidden h-full'>
 				<div className='window-bar'>
@@ -28,7 +28,7 @@ const BriefIntro = ({
 						className='icon-windowbar-plus'
 					/>
 				</div>
-				<div className='window-content px-4 py-8 sm:px-16 sm:py-24 h-80'>
+				<div className='window-content px-4 py-8 sm:px-16 sm:py-24 sm:h-80 xs:h-80 h-64'>
 					<Typewriter
 						options={{
 							strings: [role, tagline],
