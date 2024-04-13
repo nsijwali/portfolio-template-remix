@@ -1,11 +1,6 @@
 import { styled } from 'styled-components';
 
-const Box = styled.div`
-	padding: 2rem;
-`;
-
 const Chrome = styled.div`
-	/* width: 45rem; */
 	-webkit-backdrop-filter: none;
 	backdrop-filter: none;
 	outline-offset: -1px;
@@ -18,10 +13,7 @@ const Chrome = styled.div`
 		rgba(242, 242, 242, 0.2),
 		rgba(0, 0, 0, 0)
 	);
-	border-radius: 24px;
 	outline: 1px solid rgba(242, 242, 242, 0.15);
-	padding: 8px;
-	overflow: hidden;
 	box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4), 0 0 60px rgba(0, 0, 0, 0.2),
 		0 30px 120px rgba(0, 0, 0, 0.8);
 
@@ -29,8 +21,6 @@ const Chrome = styled.div`
 		-webkit-backdrop-filter: blur(20px);
 		backdrop-filter: blur(20px);
 		border: 1px solid rgba(242, 242, 242, 0.3);
-		border-radius: 16px;
-		overflow: hidden;
 		box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 0 12px rgba(0, 0, 0, 0.4);
 	}
 
@@ -91,22 +81,20 @@ const Chrome = styled.div`
 		grid-auto-columns: 1fr;
 		justify-content: space-around;
 		align-items: stretch;
-		padding-block: 6rem;
-		padding-inline: 4rem;
 		display: flex;
 		position: relative;
 
 		.tagline {
-			font-size: 2rem;
+			/* font-size: 2rem; */
 			font-weight: 800;
 		}
 
-		.sub-info {
+		/* .sub-info {
 			font-size: 14px;
 			width: 100%;
 			text-align: right;
 			margin-top: 2rem;
-		}
+		} */
 		.project-thumbnail {
 			z-index: 1;
 			max-width: 90%;
@@ -130,4 +118,4 @@ const Dot = styled.div`
 	`}
 `;
 
-export { Box, Chrome, Dot };
+export { Chrome, Dot };

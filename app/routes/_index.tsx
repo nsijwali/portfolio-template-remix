@@ -17,10 +17,10 @@ export const loader = async () => {
 const Index = () => {
 	return (
 		<>
-			<Box className='p-8 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden font-mono'>
+			<div className='font-sans p-4 sm:p-8 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden font-mono'>
 				<Header />
 				<WorkPanel />
-			</Box>
+			</div>
 		</>
 	);
 };
