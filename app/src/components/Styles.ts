@@ -16,7 +16,6 @@ const Chrome = styled.div`
 	outline: 1px solid rgba(242, 242, 242, 0.15);
 	box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4), 0 0 60px rgba(0, 0, 0, 0.2),
 		0 30px 120px rgba(0, 0, 0, 0.8);
-
 	.window-main {
 		-webkit-backdrop-filter: blur(20px);
 		backdrop-filter: blur(20px);
@@ -64,10 +63,6 @@ const Chrome = styled.div`
 		align-items: stretch;
 		display: flex;
 		position: relative;
-
-		.tagline {
-			font-weight: 800;
-		}
 		.project-thumbnail {
 			z-index: 1;
 			max-width: 90%;
@@ -104,4 +99,8 @@ const Dot = styled.div`
 	`}
 `;
 
-export { Chrome, Dot };
+const StyledHeader = styled.div`
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+`;
+
+export { Chrome, Dot, StyledHeader };

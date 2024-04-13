@@ -17,7 +17,13 @@ export const loader = async () => {
 const Index = () => {
 	return (
 		<>
-			<div className='font-sans p-4 sm:p-8 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden font-mono'>
+			<div
+				className='font-sans pt-32 sm:pt-40 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden font-mono'
+				style={{
+					backgroundImage:
+						'radial-gradient(circle closest-corner at 50% 0, rgba(242, 242, 242, .15), rgba(0, 0, 0, 0)',
+				}}
+			>
 				<Header />
 				<WorkPanel />
 			</div>

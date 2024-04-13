@@ -12,7 +12,7 @@ const BriefIntro = ({
 	return (
 		<Chrome
 			key={uuidv4()}
-			className='w-full sm:w-10/12 max-w-screen-2xl relative overflow-hidden rounded-3xl shadow-lg p-1 sm:p-2 xs:p-2 sm:h-96 xs:h-96 h-72'
+			className='w-full sm:w-8/12 max-w-screen-2xl relative overflow-hidden rounded-3xl p-1 sm:p-2 xs:p-2 sm:h-96 xs:h-96 h-72'
 		>
 			<div className='window-main sm:rounded-2xl rounded-3xl overflow-hidden h-full rounded-small'>
 				<div className='window-bar sm:h-10 justify-between items-center pl-5 pr-3 rounded-t-2xl'>
@@ -34,7 +34,7 @@ const BriefIntro = ({
 							strings: [role, tagline],
 							autoStart: true,
 							loop: true,
-							wrapperClassName: 'tagline text-xl sm:text-3xl',
+							wrapperClassName: 'font-extrabold text-xl sm:text-3xl',
 						}}
 					/>
 					<label className='text-right bottom-16 right-16 text-base bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text animate-pulse'>
