@@ -1,16 +1,11 @@
 import { styled } from 'styled-components';
 
 const Box = styled.div`
-	font-family: monospace, sans-serif;
 	padding: 2rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 2rem;
 `;
 
 const Chrome = styled.div`
-	width: 45rem;
+	/* width: 45rem; */
 	-webkit-backdrop-filter: none;
 	backdrop-filter: none;
 	outline-offset: -1px;

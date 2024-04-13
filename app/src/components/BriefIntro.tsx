@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Typewriter from 'typewriter-effect';
 import { Chrome, Dot } from './Styles';
 
@@ -9,7 +10,7 @@ const BriefIntro = ({
 	area = '',
 }) => {
 	return (
-		<Chrome>
+		<Chrome key={uuidv4()} className='w-full sm:w-10/12 max-w-screen-2xl'>
 			<div className='window-main'>
 				<div className='window-bar'>
 					<div className='window-dots-wrapper'>

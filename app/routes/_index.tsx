@@ -17,7 +17,7 @@ export const loader = async () => {
 const Index = () => {
 	return (
 		<>
-			<Box>
+			<Box className='p-8 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden font-mono'>
 				<Header />
 				<WorkPanel />
 			</Box>

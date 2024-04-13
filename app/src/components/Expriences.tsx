@@ -6,9 +6,9 @@ import { Experience } from './type';
 const Expriences = ({ experience = [] }: any) => {
 	return experience?.map(({ company, summary, imageURL }: Experience) => (
 		<Chrome key={uuidv4()}>
-			<div className='window-main'>
+			<div className='window-main hover:bg-sky-700'>
 				<div className='window-content'>
-					<div>{summary}</div>
+					<p className='text-gray-500 font-medium'>{summary}</p>
 					<span>{company}</span>
 					<img
 						src={imageURL}

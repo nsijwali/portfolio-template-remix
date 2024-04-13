@@ -5,7 +5,7 @@ const Header = () => {
 	const { data } = useLoaderData() || [];
 	return (
 		<>
-			<h4>{data?.name}</h4>
+			<p className='font-bold'>{data?.name}</p>
 			<span>{data?.designation}</span>
 		</>
 	);

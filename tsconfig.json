@@ -16,7 +16,7 @@
 		"esModuleInterop": true,
 		"jsx": "react",
 		"module": "ESNext",
-		"moduleResolution": "Bundler",
+		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"target": "ES2022",
 		"strict": true,

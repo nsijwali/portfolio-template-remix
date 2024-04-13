@@ -1,3 +1,4 @@
+import type { LinksFunction } from '@remix-run/node';
 import {
 	Links,
 	Meta,
@@ -8,6 +9,11 @@ import {
 } from '@remix-run/react';
 // import { Outlet } from '@remix-run/react';
 import React from 'react';
+import stylesheet from '~/tailwind.css?url';
+
+export const links: LinksFunction = () => [
+	{ rel: 'stylesheet', href: stylesheet },
+];
 
 export const meta = () => [
 	{
