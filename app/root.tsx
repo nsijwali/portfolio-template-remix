@@ -22,10 +22,14 @@ export const meta = () => [
 		description:
 			'Welcome to the portfolio of Nitin Sijwali. Find information about my projects, skills, and experiences. This portfolio has been created using Remix, Reactjs and styled components',
 	},
-	{ robots: 'index: true, follow: true ' },
+	{ robots: 'index: true, follow: true' },
 	{
 		keywords:
 			'portfolio, projects, skills, experiences, Nitin Sijwali, React.js, Reactjs, react, javascript, html, css, styled-components, frontend, ui, web, applications, remix, Remix, framework, cool, typescript, instagram, iconify, react-icons',
+	},
+	{
+		rel: 'icon',
+		href: '/favicon.ico',
 	},
 ];
 
