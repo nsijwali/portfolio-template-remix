@@ -23,16 +23,18 @@ const Header = () => {
 			<div className='flex gap-1 items-center'>
 				<LogoRenderer />
 				<div className='hidden sm:flex flex-col'>
-					<p className='text-xl font-medium animate'>{currentString || ''}</p>
+					<p className='text-xl font-medium animate animate-fade-in-out'>
+						{currentString || ''}
+					</p>
 					<span className='text-xs text-gray-400'>{data?.designation}</span>
 				</div>
 			</div>
 			<span className='flex gap-1'>
 				<Link target='_blank' to={data.gitHubLink}>
-					<FaGithub size='24' />
+					<FaGithub size='28' />
 				</Link>
 				<Link target='_blank' to={data.linkedInLink}>
-					<FaLinkedin size='24' />
+					<FaLinkedin size='28' />
 				</Link>
 			</span>
 		</StyledHeader>

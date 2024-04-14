@@ -67,6 +67,10 @@ portfolio
 
 ```
 
+### create free logo
+
+https://logo.com/
+
 ### Generate Favicon
 
 https://favicon.io/favicon-generator/
