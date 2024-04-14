@@ -1,10 +1,10 @@
 import React from 'react';
-import { useLoaderData } from '@remix-run/react';
+import { useRouteLoaderData } from '@remix-run/react';
 import BriefIntro from '../components/BriefIntro';
 import Expriences from '../components/Expriences';
 
 const WorkPanel = () => {
-	const { data } = useLoaderData() || [];
+	const { data } = useRouteLoaderData('root');
 	return (
 		<>
 			<BriefIntro

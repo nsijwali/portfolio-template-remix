@@ -1,17 +1,5 @@
 import React from 'react';
-import Header from '../src/components/Header';
 import WorkPanel from '../src/screens/WorkPanel';
-import userInfo from '~/db/user.json';
-
-export const loader = async () => {
-	return {
-		status: 200,
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		data: userInfo,
-	};
-};
 
 const Index = () => {
 	return (
@@ -23,7 +11,6 @@ const Index = () => {
 						'radial-gradient(circle closest-corner at 50% 0, rgba(242, 242, 242, .15), rgba(0, 0, 0, 0)',
 				}}
 			>
-				<Header />
 				<WorkPanel />
 			</div>
 		</>

@@ -9,6 +9,8 @@ import {
 } from '@remix-run/react';
 import React from 'react';
 import stylesheet from '~/tailwind.css?url';
+import userInfo from '~/db/user.json';
+import Header from './src/components/Header';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
@@ -42,6 +44,16 @@ export default function App() {
 	return <Outlet />;
 }
 
+export const loader = async () => {
+	return {
+		status: 200,
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		data: userInfo,
+	};
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en'>
@@ -63,6 +75,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					minHeight: '100%',
 				}}
 			>
+				<Header />
 				{children}
 				<ScrollRestoration />
 				<Scripts />
