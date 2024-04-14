@@ -16,8 +16,7 @@ export const links: LinksFunction = () => [
 
 export const meta = () => [
 	{
-		charset: 'utf-8',
-		title: 'Portfolio',
+		title: 'Portfolio | Nitin Sijwali',
 	},
 	{
 		description:
@@ -26,7 +25,7 @@ export const meta = () => [
 	{ robots: 'index: true, follow: true ' },
 	{
 		keywords:
-			'portfolio, projects, skills, experiences, Nitin Sijwali, React.js, Reactjs, react, javascript, html, css, styled-components, frontend, ui, web, applications, remix, Remix, framework',
+			'portfolio, projects, skills, experiences, Nitin Sijwali, React.js, Reactjs, react, javascript, html, css, styled-components, frontend, ui, web, applications, remix, Remix, framework, cool, typescript, instagram, iconify, react-icons',
 	},
 ];
 
