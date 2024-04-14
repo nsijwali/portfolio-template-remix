@@ -1,5 +1,6 @@
-import { useLoaderData } from '@remix-run/react';
+import { Link, useLoaderData } from '@remix-run/react';
 import React from 'react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { StyledHeader } from './Styles';
 
 const Header = () => {
@@ -10,9 +11,13 @@ const Header = () => {
 				<p className='text-xl font-medium'>{data?.name}</p>
 				<span className='text-xs text-gray-400'>{data?.designation}</span>
 			</span>
-			<span>
-				<span>LinkedIn</span>
-				<span>Git</span>
+			<span className='flex gap-1'>
+				<Link target='_blank' to={data.gitHubLink}>
+					<FaGithub size='24' />
+				</Link>
+				<Link target='_blank' to={data.linkedInLink}>
+					<FaLinkedin size='24' />
+				</Link>
 			</span>
 		</StyledHeader>
 	);

@@ -37,7 +37,7 @@ const BriefIntro = ({
 							wrapperClassName: 'font-extrabold text-xl sm:text-3xl',
 						}}
 					/>
-					<label className='text-right bottom-16 right-16 text-base bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text animate-pulse'>
+					<label className='text-right bottom-16 right-16 text-sm sm:text-base bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text animate-pulse'>
 						{role} at {currentOrg}. Based in {area}.
 					</label>
 				</div>
