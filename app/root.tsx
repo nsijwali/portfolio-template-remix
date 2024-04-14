@@ -31,6 +31,11 @@ export const meta = () => [
 		rel: 'icon',
 		href: '/favicon.ico',
 	},
+	{
+		rel: 'apple-touch-icon',
+		sizes: '180x180',
+		href: '/favicon.ico',
+	},
 ];
 
 export default function App() {
