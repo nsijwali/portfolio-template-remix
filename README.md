@@ -66,3 +66,11 @@ portfolio
 └─ vite.config.ts
 
 ```
+
+### Generate Favicon
+
+https://favicon.io/favicon-generator/
+
+### Tailwindcss cheatsheet
+
+https://nerdcave.com/tailwind-cheat-sheet
