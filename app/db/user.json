@@ -9,7 +9,7 @@
 	"tagline": "Software Developer who cares deeply about good taste and User-Centric Design.",
 	"gitHubLink": "https://github.com/nsijwali",
 	"linkedInLink": "https://www.linkedin.com/in/nitinsij/",
-	"images": [""],
+	"images": ["/images/logo.webp", "/images/logo-2.jpeg", "/images/logo-3.jpeg"],
 	"skills": [
 		"Webpack",
 		"ReactJS",
