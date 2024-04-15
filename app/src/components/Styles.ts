@@ -102,22 +102,33 @@ const Dot = styled.div`
 const StyledHeader = styled.div`
 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 	.nav-pill {
-		width: 180px;
-		height: 48px;
-		-webkit-backdrop-filter: blur(15px);
-		backdrop-filter: blur(15px);
 		background-color: rgba(242, 242, 242, 0.05);
 		border: 1px solid rgba(242, 242, 242, 0.1);
-		border-radius: 24px;
-		justify-content: space-between;
-		align-items: center;
-		padding-left: 6px;
-		padding-right: 6px;
 		transition: box-shadow 1s cubic-bezier(0.23, 1, 0.32, 1),
 			border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-		display: flex;
-		position: relative;
 		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+	}
+	.nav-option {
+		transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+	.nav-option:hover {
+		background-image: linear-gradient(
+			270deg,
+			rgba(0, 0, 0, 0),
+			rgba(242, 242, 242, 0.05)
+		);
+	}
+	.nav-indicator-glow {
+		top: -2px;
+		box-shadow: 0 2px 25px 2px #fff;
+		/* transition: all 1s ease-in; */
+		transform: translateX(10%);
+		/* transition: all 1s ease; */
+		/* transition: width 0.3s ease; */
+	}
+	.active-tab {
+		background-color: rgba(242, 242, 242, 0.05);
+		border-radius: 18px;
 	}
 `;
 
