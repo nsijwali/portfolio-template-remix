@@ -11,6 +11,7 @@ import React from 'react';
 import stylesheet from '~/tailwind.css?url';
 import userInfo from '~/db/user.json';
 import Header from './src/components/Header';
+import { Footer } from './src/components/Footer';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
@@ -77,6 +78,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			>
 				<Header />
 				{children}
+				<Footer />
 				<ScrollRestoration />
 				<Scripts />
 			</body>

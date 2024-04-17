@@ -65,5 +65,6 @@
 				"Bugs fixes and enhancements were implemented, which significantly improved web functionality and speed."
 			]
 		}
-	]
+	],
+	"footerText": "Crafted with passion and precision by [Your Name], Senior Software Engineer. © [Current Year]. All rights reserved. Built with Remix.js for an unparalleled user experience."
 }

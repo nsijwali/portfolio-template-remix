@@ -1,5 +1,5 @@
 import { Link, useNavigate, useLoaderData } from '@remix-run/react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import LogoRenderer from './LogoRenderer';
 import Pill from './Pill';
@@ -8,17 +8,6 @@ import { StyledHeader } from './Styles';
 const Header = () => {
 	const navigate = useNavigate();
 	const { data } = useLoaderData() || [];
-	const [currentString, setCurrentString] = useState(data.name);
-
-	useEffect(() => {
-		const intervalId = setInterval(() => {
-			setCurrentString(
-				currentString === data.name ? data.nativeName : data.name,
-			);
-		}, 5000); // Change string every 5000 seconds (5000 milliseconds)
-
-		return () => clearInterval(intervalId); // Cleanup function to clear interval on component unmount
-	}, [currentString]);
 
 	const handleRoute = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 		navigate('/');
@@ -31,7 +20,7 @@ const Header = () => {
 				<LogoRenderer />
 				<div className='hidden sm:flex flex-col left-28 absolute'>
 					<p className='text-xl font-medium animate animate-fade-in-out'>
-						{currentString || ''}
+						{data.name || ''}
 					</p>
 					<span className='text-xs text-gray-400'>{data?.designation}</span>
 				</div>

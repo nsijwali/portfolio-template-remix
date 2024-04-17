@@ -121,10 +121,6 @@ const StyledHeader = styled.div`
 	.nav-indicator-glow {
 		top: -2px;
 		box-shadow: 0 2px 25px 2px #fff;
-		/* transition: all 1s ease-in; */
-		transform: translateX(10%);
-		/* transition: all 1s ease; */
-		/* transition: width 0.3s ease; */
 	}
 	.active-tab {
 		background-color: rgba(242, 242, 242, 0.05);
@@ -132,4 +128,6 @@ const StyledHeader = styled.div`
 	}
 `;
 
-export { Chrome, Dot, StyledHeader };
+const StyledFooter = styled.div``;
+
+export { Chrome, Dot, StyledHeader, StyledFooter };
