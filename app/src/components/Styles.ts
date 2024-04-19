@@ -131,4 +131,10 @@ const StyledHeader = styled.div`
 
 const StyledFooter = styled.div``;
 
-export { Chrome, Dot, StyledHeader, StyledFooter };
+const StyledInfo = styled.div`
+	.dot {
+		box-shadow: 0 0 20px #fff;
+	}
+`;
+
+export { Chrome, Dot, StyledHeader, StyledFooter, StyledInfo };
