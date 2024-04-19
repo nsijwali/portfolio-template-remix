@@ -1,11 +1,30 @@
 import { Link, useLoaderData } from '@remix-run/react';
 import { WiDirectionUpRight } from 'react-icons/wi';
-import React, { useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import pdfUrl from '~/db/nitin_sijwali_resume.pdf';
 import { StyledFooter } from './Styles';
 
 export const Footer = () => {
 	const { data } = useLoaderData() || [];
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const userAgent = navigator.userAgent.toLowerCase();
+		setIsMobile(
+			/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+				userAgent,
+			),
+		);
+	}, []);
+
+	const emailUrl = useMemo(
+		() =>
+			isMobile
+				? `mailto:${data.email}`
+				: `https://mail.google.com/mail/?view=cm&fs=1&to=${data.email}`,
+		[isMobile],
+	);
+
 	const year = useMemo(() => {
 		const d = new Date();
 		return d.getFullYear();
@@ -45,7 +64,7 @@ export const Footer = () => {
 								reloadDocument={false}
 								target='_blank'
 								rel='noreferrer'
-								to={`https://mail.google.com/mail/?view=cm&fs=1&to=${data.email}`}
+								to={emailUrl}
 							>
 								Mail
 								<WiDirectionUpRight size='30' />
