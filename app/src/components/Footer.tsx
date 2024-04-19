@@ -44,6 +44,7 @@ export const Footer = () => {
 								className='flex items-center hover:text-yellow-300'
 								reloadDocument={false}
 								target='_blank'
+								rel='noreferrer'
 								to={`https://mail.google.com/mail/?view=cm&fs=1&to=${data.email}`}
 							>
 								Mail
