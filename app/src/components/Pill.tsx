@@ -9,7 +9,7 @@ const Pill = () => {
 	);
 	return (
 		<div className='nav-pill-wrapper flex w-44 h-12 flex-col'>
-			<div className='nav-pill flex px-2 items-center h-12 w-44 backdrop-filter rounded-3xl justify-between relative'>
+			<div className='nav-pill flex px-2 items-center h-12 w-44 rounded-3xl justify-between relative'>
 				<div
 					className={
 						selectedMargin +
