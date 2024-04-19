@@ -108,6 +108,7 @@ const StyledHeader = styled.div`
 			border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 		backdrop-filter: blur(15px);
+		-webkit-backdrop-filter: blur(2px) contrast(60%);
 	}
 	.nav-option {
 		transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
