@@ -13,23 +13,25 @@
 	"resumeLink": "https://drive.google.com/file/d/1SzeLFnIohGL6-HgpcguDW9zigvKuFgT6/view",
 	"images": ["/images/logo.webp", "/images/logo-2.jpeg", "/images/logo-3.jpeg"],
 	"skills": [
-		"Webpack",
+		"JavaScript",
+		"TypeScript",
 		"ReactJS",
 		"Redux.js",
 		"jQuery",
 		"Angular",
-		"TypeScript",
-		"JavaScript",
 		"Remix",
-		"Fullstory"
+		"Fullstory",
+		"Webpack",
+		"HTML",
+		"CSS"
 	],
 	"summary": "Experienced Frontend Developer proficient in React.js, Angular, JavaScript & TypeScript. Skilled in leading teams & crafting user-friendly interfaces.",
 	"honors_awards": ["Star Performer", "SPOT Award", "INSTA Award"],
 	"experience": [
 		{
 			"company": "Lowe's India",
-			"position": "Senior Software Engineer",
-			"duration": "January 2021 - Present",
+			"position": "Senior Software Engineer(IC)",
+			"duration": "Jan 2021 - Present",
 			"location": "Bengaluru, Karnataka, India",
 			"summary": "Involved in Item Group Management (IGM) for variations, collections, PCR , Item Relationships and digital assets for vendor and internal users to submit during item setup",
 			"responsibilities": [
@@ -45,7 +47,7 @@
 		{
 			"company": "Publicis Sapient",
 			"position": "Associate, Experienced Technology L2",
-			"duration": "September 2019 - January 2021",
+			"duration": "Sep 2019 - Jan 2021",
 			"location": "Bengaluru, KA",
 			"responsibilities": [
 				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
@@ -57,7 +59,7 @@
 		{
 			"company": "Infosys",
 			"position": "Senior Systems Engineer",
-			"duration": "October 2016 - August 2019",
+			"duration": "Oct 2016 - Aug 2019",
 			"location": "Bengaluru, KA",
 			"responsibilities": [
 				"Designed user-friendly websites with Javascript, it's framework, and libraries.",
@@ -66,6 +68,5 @@
 				"Bugs fixes and enhancements were implemented, which significantly improved web functionality and speed."
 			]
 		}
-	],
-	"footerText": "Crafted with passion and precision by [Your Name], Senior Software Engineer. © [Current Year]. All rights reserved. Built with Remix.js for an unparalleled user experience."
+	]
 }
