@@ -1,7 +1,6 @@
 import { Link, useLoaderData } from '@remix-run/react';
 import { WiDirectionUpRight } from 'react-icons/wi';
 import React, { useEffect, useState, useMemo } from 'react';
-import pdfUrl from '~/db/nitin_sijwali_resume.pdf';
 import { StyledFooter } from './Styles';
 
 export const Footer = () => {
@@ -43,7 +42,7 @@ export const Footer = () => {
 						<div className='flex flex-col text-sm'>
 							<Link
 								target='_blank'
-								to={data.linkedInLink}
+								to={data?.linkedInLink || ''}
 								className='flex items-center hover:text-yellow-300'
 							>
 								Linkedin
@@ -52,7 +51,7 @@ export const Footer = () => {
 							<Link
 								className='flex items-center hover:text-yellow-300'
 								target='_blank'
-								to={data.gitHubLink}
+								to={data?.gitHubLink || ''}
 							>
 								Git
 								<WiDirectionUpRight size='30' />
@@ -73,7 +72,7 @@ export const Footer = () => {
 								className='flex items-center hover:text-yellow-300'
 								reloadDocument={false}
 								target='_blank'
-								to={pdfUrl}
+								to={data?.resumeLink || ''}
 							>
 								Resume
 								<WiDirectionUpRight size='30' />

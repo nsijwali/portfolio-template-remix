@@ -10,7 +10,7 @@ const Info = () => {
 				<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
 				<span className='text-gray-400 text-xs'>ABOUT ME</span>
 			</span>
-			<div className='pt-4 text-sm sm:text-base xs:text-base'>
+			<div className='text-shadow pt-4 text-2xl sm:text-3xl xs:text-3xl'>
 				{data?.summary}
 			</div>
 		</StyledInfo>

@@ -136,6 +136,9 @@ const StyledInfo = styled.div`
 	.dot {
 		box-shadow: 0 0 20px #fff;
 	}
+	.text-shadow {
+		text-shadow: 0 0 12px #fff;
+	}
 `;
 
 export { Chrome, Dot, StyledHeader, StyledFooter, StyledInfo };

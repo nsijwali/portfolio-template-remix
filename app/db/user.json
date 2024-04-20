@@ -10,6 +10,7 @@
 	"tagline": "Software Developer who cares deeply about good taste and User-Centric Design.",
 	"gitHubLink": "https://github.com/nsijwali",
 	"linkedInLink": "https://www.linkedin.com/in/nitinsij/",
+	"resumeLink": "https://drive.google.com/file/d/1SzeLFnIohGL6-HgpcguDW9zigvKuFgT6/view",
 	"images": ["/images/logo.webp", "/images/logo-2.jpeg", "/images/logo-3.jpeg"],
 	"skills": [
 		"Webpack",
@@ -22,7 +23,7 @@
 		"Remix",
 		"Fullstory"
 	],
-	"summary": "Experienced Frontend Developer with a proven track record of delivering high-quality, scalable web applications. Specialized in React.js, Angular, JavaScript, and TypeScript. Adept at leading and mentoring junior developers to achieve project success. Passionate about crafting efficient and user-friendly interfaces that enhance the overall user experience. Seeking opportunities to contribute expertise in frontend development and leadership to dynamic teams.",
+	"summary": "Experienced Frontend Developer proficient in React.js, Angular, JavaScript & TypeScript. Skilled in leading teams & crafting user-friendly interfaces.",
 	"honors_awards": ["Star Performer", "SPOT Award", "INSTA Award"],
 	"experience": [
 		{
