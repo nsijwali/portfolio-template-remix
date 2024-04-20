@@ -9,7 +9,7 @@ const Skills = ({ skills }: { skills: Array<string> }) => {
 				<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
 				<span className='text-gray-400 text-xs'>SKILLS</span>
 			</span>
-			<span>
+			<span className='sm:font-medium text-sm'>
 				{skills.join(', ')}
 				{/* {skills.map((sk, index) => (
 					<label key={sk}>{sk},</label>
