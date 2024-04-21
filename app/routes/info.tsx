@@ -11,7 +11,7 @@ const Info = () => {
 		<StyledInfo className='w-full sm:w-8/12 max-w-screen-2xl relative overflow-hidden rounded-3xl p-1 sm:p-2 xs:p-2 flex flex-col gap-10'>
 			<About summary={data.summary} />
 			<Expriences experience={data?.experience} />
-			<Skills skills={data.skills} />
+			<Skills skills={data.skills} resumeLink={data.resumeLink} />
 		</StyledInfo>
 	);
 };
