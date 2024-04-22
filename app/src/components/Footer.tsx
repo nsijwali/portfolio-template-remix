@@ -2,19 +2,20 @@ import { Link, useLoaderData } from '@remix-run/react';
 import { WiDirectionUpRight } from 'react-icons/wi';
 import React, { useEffect, useState, useMemo } from 'react';
 import { StyledFooter } from './Styles';
+import { isMobileDevice } from '~/utils/utils';
 
 export const Footer = () => {
 	const { data } = useLoaderData() || [];
 	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
-		const userAgent = navigator.userAgent.toLowerCase();
-		setIsMobile(
-			/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
-				userAgent,
-			),
-		);
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
 	}, []);
+
+	const handleResize = () => {
+		setIsMobile(isMobileDevice());
+	};
 
 	const emailUrl = useMemo(
 		() =>

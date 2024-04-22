@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { SiRemix } from 'react-icons/si';
 import { SiReact } from 'react-icons/si';
@@ -12,6 +12,7 @@ import { SiAngular } from 'react-icons/si';
 import { SiWebpack } from 'react-icons/si';
 import { CommonWrapper } from './Styles';
 import { Link } from '@remix-run/react';
+import { isMobileDevice } from '~/utils/utils';
 
 const Skills = ({
 	skills,
@@ -20,48 +21,61 @@ const Skills = ({
 	skills: Array<string>;
 	resumeLink: string;
 }) => {
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	const handleResize = () => {
+		setIsMobile(isMobileDevice());
+	};
+
+	const size = useMemo(() => (isMobile ? '28' : '32'), [isMobile]);
+
 	const skillObjectFormatter = (sk: string) => {
 		const result = {
 			label: sk,
-			component: <SiReact size='32' />,
+			component: <SiReact size={size} />,
 		};
 		switch (sk.toLowerCase()) {
 			case 'javascript':
-				result.component = <SiJavascript size='32' />;
+				result.component = <SiJavascript size={size} />;
 				break;
 			case 'typescript':
-				result.component = <SiTypescript size='32' />;
+				result.component = <SiTypescript size={size} />;
 				break;
 			case 'redux':
-				result.component = <SiRedux size='32' />;
+				result.component = <SiRedux size={size} />;
 				break;
 			case 'jquery':
-				result.component = <SiJquery size='32' />;
+				result.component = <SiJquery size={size} />;
 				break;
 			case 'angular':
-				result.component = <SiAngular size='32' />;
+				result.component = <SiAngular size={size} />;
 				break;
 			case 'fullstory':
 				result.component = (
 					<img
 						src={'/images/fullstory.svg?url'}
 						alt='fullstoryLogoSVG'
-						width={32}
-						height={32}
+						width={size}
+						height={size}
 					/>
 				);
 				break;
 			case 'remix':
-				result.component = <SiRemix size='32' />;
+				result.component = <SiRemix size={size} />;
 				break;
 			case 'webpack':
-				result.component = <SiWebpack size='32' />;
+				result.component = <SiWebpack size={size} />;
 				break;
 			case 'html':
-				result.component = <SiHtml5 size='32' />;
+				result.component = <SiHtml5 size={size} />;
 				break;
 			case 'css':
-				result.component = <SiCss3 size='32' />;
+				result.component = <SiCss3 size={size} />;
 				break;
 			default:
 				break;
