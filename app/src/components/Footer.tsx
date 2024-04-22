@@ -9,13 +9,8 @@ export const Footer = () => {
 	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
-
-	const handleResize = () => {
 		setIsMobile(isMobileDevice());
-	};
+	}, []);
 
 	const emailUrl = useMemo(
 		() =>

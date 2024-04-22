@@ -24,13 +24,8 @@ const Skills = ({
 	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
-
-	const handleResize = () => {
 		setIsMobile(isMobileDevice());
-	};
+	}, []);
 
 	const size = useMemo(() => (isMobile ? '28' : '32'), [isMobile]);
 
