@@ -12,6 +12,7 @@ export interface UserDetails {
 	summary?: string;
 	honors_awards?: string[];
 	experience?: Experience[];
+	recommendations?: Recommendations[];
 }
 
 export interface Experience {
@@ -23,4 +24,10 @@ export interface Experience {
 	responsibilities?: string[];
 	imageURL?: string;
 	skillsUsed?: string[];
+}
+
+export interface Recommendations {
+	from?: string;
+	designation?: string;
+	praise?: string;
 }

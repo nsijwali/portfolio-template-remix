@@ -45,7 +45,7 @@ const Skills = ({
 		setIsMobile(isMobileDevice());
 	}, []);
 
-	const size = useMemo(() => (isMobile ? '28' : '32'), [isMobile]);
+	const size = useMemo(() => (isMobile ? '28' : '36'), [isMobile]);
 
 	const skillObjectFormatter = (sk: string) => {
 		const result = {
@@ -89,7 +89,7 @@ const Skills = ({
 		return result;
 	};
 	return (
-		<CommonWrapper className='w-full sm:w-8/12 max-w-screen-2xl relative overflow-hidden rounded-3xl p-1 sm:p-2 xs:p-2 h-60'>
+		<CommonWrapper className='w-full sm:w-8/12 max-w-screen-2xl relative p-1 sm:p-2 xs:p-2 h-60'>
 			<span className='flex items-center gap-2'>
 				<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
 				<span className='text-gray-400 text-xs'>SKILLS</span>
@@ -97,7 +97,7 @@ const Skills = ({
 			<Link
 				reloadDocument={false}
 				target='_blank'
-				className='hover-svg flex pt-2 sm:font-medium gap-4 text-sm flex-wrap hover:text-gray-400 '
+				className='hover-svg flex pt-2 sm:font-medium gap-4 sm:gap-16 text-sm flex-wrap hover:text-gray-400 '
 				title='resume?'
 				to={resumeLink || ''}
 			>
