@@ -89,7 +89,7 @@ const Skills = ({
 		return result;
 	};
 	return (
-		<CommonWrapper className='w-full max-w-screen-2xl relative'>
+		<CommonWrapper className='w-full sm:w-8/12 max-w-screen-2xl relative overflow-hidden rounded-3xl p-1 sm:p-2 xs:p-2 h-60'>
 			<span className='flex items-center gap-2'>
 				<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
 				<span className='text-gray-400 text-xs'>SKILLS</span>

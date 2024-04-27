@@ -50,7 +50,7 @@ portfolio
 │     ├─ .babelrc
 │     ├─ components
 │     │  ├─ BriefIntro.tsx
-│     │  ├─ Expriences.tsx
+│     │  ├─ Experiences.tsx
 │     │  ├─ Header.tsx
 │     │  ├─ Styles.ts
 │     │  └─ type.ts

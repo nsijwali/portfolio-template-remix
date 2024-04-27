@@ -34,6 +34,19 @@
 			"duration": "Jan 2021 - Present",
 			"location": "Bengaluru, Karnataka, India",
 			"summary": "Involved in Item Group Management (IGM) for variations, collections, PCR , Item Relationships and digital assets for vendor and internal users to submit during item setup",
+			"skillsUsed": [
+				"JavaScript",
+				"TypeScript",
+				"ReactJS",
+				"Redux",
+				"Fullstory",
+				"Webpack",
+				"HTML",
+				"CSS",
+				"Web app",
+				"Mentoring",
+				"Code review"
+			],
 			"responsibilities": [
 				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
 				"Built Reusable React components with modular CSS, and state management on the client with Redux",
@@ -54,6 +67,18 @@
 				"Built Reusable React components with modular CSS, and state management on the client with Redux.",
 				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse.",
 				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences."
+			],
+			"skillsUsed": [
+				"JavaScript",
+				"TypeScript",
+				"ReactJS",
+				"Redux",
+				"Context-api",
+				"Nginx",
+				"Webpack",
+				"HTML",
+				"CSS",
+				"Web app"
 			]
 		},
 		{
@@ -66,6 +91,17 @@
 				"Collaborated with the team to create projects at various stages of the project's lifecycle.",
 				"Reusable code and libraries were created for future use.",
 				"Bugs fixes and enhancements were implemented, which significantly improved web functionality and speed."
+			],
+			"skillsUsed": [
+				"JavaScript",
+				"TypeScript",
+				"ReactJS",
+				"Redux",
+				"Webpack",
+				"HTML",
+				"CSS",
+				"Angular",
+				"Web app"
 			]
 		}
 	]

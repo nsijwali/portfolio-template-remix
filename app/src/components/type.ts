@@ -22,4 +22,5 @@ export interface Experience {
 	summary?: string;
 	responsibilities?: string[];
 	imageURL?: string;
+	skillsUsed?: string[];
 }

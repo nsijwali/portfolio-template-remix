@@ -132,7 +132,7 @@ const StyledHeader = styled.div`
 
 const StyledFooter = styled.div``;
 
-const StyledInfo = styled.div`
+const CommonWrapper = styled.div<any>`
 	.dot {
 		box-shadow: 0 0 20px #fff;
 	}
@@ -141,10 +141,4 @@ const StyledInfo = styled.div`
 	}
 `;
 
-const CommonWrapper = styled.div<any>`
-	.dot {
-		box-shadow: 0 0 20px #fff;
-	}
-`;
-
-export { Chrome, Dot, StyledHeader, StyledFooter, StyledInfo, CommonWrapper };
+export { Chrome, Dot, StyledHeader, StyledFooter, CommonWrapper };
