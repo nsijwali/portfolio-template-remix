@@ -84,6 +84,18 @@ const Chrome = styled.div`
 			border-radius: 1.25rem; /* 20px */
 		}
 	}
+	.hero-fade {
+		z-index: 5;
+		background-image: linear-gradient(
+			to bottom,
+			rgba(16, 16, 16, 0),
+			rgba(0, 0, 0, 100%)
+		);
+		top: auto;
+		bottom: 0%;
+		left: 0%;
+		right: 0%;
+	}
 `;
 
 const Dot = styled.div`

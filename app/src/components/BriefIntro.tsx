@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { BsArrowDown } from 'react-icons/bs';
 import Typewriter from 'typewriter-effect';
 import { Chrome, Dot } from './component.styles';
+import { isMobileDevice } from '~/utils/utils';
 
 const BriefIntro = ({
 	tagline = '',
@@ -9,6 +11,12 @@ const BriefIntro = ({
 	currentOrg = '',
 	area = '',
 }) => {
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		setIsMobile(isMobileDevice());
+	}, [isMobileDevice]);
+	const size = useMemo(() => (isMobile ? '28' : '40'), [isMobile]);
 	return (
 		<Chrome
 			key={uuidv4()}
@@ -43,7 +51,9 @@ const BriefIntro = ({
 					</label>
 				</div>
 			</div>
-			{/* </div> */}
+			<div className='hero-fade absolute flex flex-col items-center justify-end h-48'>
+				<BsArrowDown className='animate-bounce' size={size} />
+			</div>
 		</Chrome>
 	);
 };

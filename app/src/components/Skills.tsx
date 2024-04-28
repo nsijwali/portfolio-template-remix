@@ -32,18 +32,16 @@ const returnSVG = (fill: string = '#fff', size: string) => (
 	</svg>
 );
 
-const Skills = ({
-	skills,
-	resumeLink,
-}: {
-	skills: Array<string>;
-	resumeLink: string;
-}) => {
+interface ISkill {
+	name: string;
+	url: string;
+}
+const Skills = ({ skills }: { skills: Array<ISkill>; resumeLink: string }) => {
 	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
 		setIsMobile(isMobileDevice());
-	}, []);
+	}, [isMobileDevice]);
 
 	const size = useMemo(() => (isMobile ? '28' : '36'), [isMobile]);
 
@@ -95,14 +93,14 @@ const Skills = ({
 				<span className='text-gray-400 text-xs'>SKILLS</span>
 			</span>
 			<div className='flex pt-2 sm:font-medium gap-4 sm:gap-16 text-sm flex-wrap'>
-				{skills.map((name) => (
+				{skills.map(({ name, url }: ISkill) => (
 					<Link
 						className='flex flex-col gap-1 items-center hover:text-gray-400'
 						key={uuidv4()}
-						title='resume?'
+						title={`Learn ${name}`}
 						reloadDocument={false}
 						target='_blank'
-						to={resumeLink || ''}
+						to={url || ''}
 					>
 						<>{skillObjectFormatter(name).component}</>
 						<span className='text-sm sm:text-base font-semibold'>

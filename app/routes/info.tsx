@@ -11,7 +11,7 @@ const Info = () => {
 		<>
 			<About summary={data.summary} />
 			<Experiences experience={data?.experience} resumeLink={data.resumeLink} />
-			<Skills skills={data.skills} resumeLink={data.resumeLink} />
+			<Skills skills={data.skills} />
 			<Recommendation recommendations={data.recommendations} />
 		</>
 	);

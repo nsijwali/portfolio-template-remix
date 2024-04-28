@@ -13,17 +13,50 @@
 	"resumeLink": "https://drive.google.com/file/d/1SzeLFnIohGL6-HgpcguDW9zigvKuFgT6/view",
 	"images": ["/images/logo.webp", "/images/logo-2.jpeg", "/images/logo-3.jpeg"],
 	"skills": [
-		"JavaScript",
-		"TypeScript",
-		"ReactJS",
-		"Redux",
-		"jQuery",
-		"Angular",
-		"Remix",
-		"Fullstory",
-		"Webpack",
-		"HTML",
-		"CSS"
+		{
+			"name": "JavaScript",
+			"url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+		},
+		{
+			"name": "TypeScript",
+			"url": "https://www.typescriptlang.org/"
+		},
+		{
+			"name": "ReactJS",
+			"url": "https://react.dev/"
+		},
+		{
+			"name": "Redux",
+			"url": "https://redux.js.org/"
+		},
+		{
+			"name": "jQuery",
+			"url": "https://jquery.com/"
+		},
+		{
+			"name": "Angular",
+			"url": "https://angular.io/"
+		},
+		{
+			"name": "Remix",
+			"url": "https://remix.run/"
+		},
+		{
+			"name": "Fullstory",
+			"url": "https://www.fullstory.com/"
+		},
+		{
+			"name": "Webpack",
+			"url": "https://webpack.js.org/"
+		},
+		{
+			"name": "HTML",
+			"url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+		},
+		{
+			"name": "CSS",
+			"url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+		}
 	],
 	"summary": "Experienced Frontend Developer proficient in React.js, Angular, JavaScript & TypeScript. Skilled in leading teams & crafting user-friendly interfaces.",
 	"honors_awards": ["Star Performer", "SPOT Award", "INSTA Award"],
