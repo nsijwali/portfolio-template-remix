@@ -34,7 +34,7 @@ const BriefIntro = ({
 							strings: [role, tagline],
 							autoStart: true,
 							loop: true,
-							delay: '5',
+							delay: 20,
 							wrapperClassName: 'font-extrabold text-xl sm:text-3xl',
 						}}
 					/>

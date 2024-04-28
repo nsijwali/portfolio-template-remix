@@ -27,14 +27,14 @@ const Header = () => {
 			<span className='flex gap-1'>
 				<Link
 					target='_blank'
-					className='hover:text-yellow-300'
+					className='hover:text-yellow-300 backdrop-blur'
 					to={data.gitHubLink}
 				>
 					<FaGithub size='28' />
 				</Link>
 				<Link
 					target='_blank'
-					className='hover:text-yellow-300'
+					className='hover:text-yellow-300 backdrop-blur'
 					to={data.linkedInLink}
 				>
 					<FaLinkedin size='28' />
