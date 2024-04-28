@@ -28,7 +28,7 @@ https://favicon.io/favicon-generator/
 https://nerdcave.com/tailwind-cheat-sheet
 
 ```
-my-remix-app
+Portfolio
 ├─ .eslintrc.cjs
 ├─ .gitignore
 ├─ README.md

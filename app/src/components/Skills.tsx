@@ -36,7 +36,7 @@ interface ISkill {
 	name: string;
 	url: string;
 }
-const Skills = ({ skills }: { skills: Array<ISkill>; resumeLink: string }) => {
+const Skills = ({ skills }: { skills: Array<ISkill> }) => {
 	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
