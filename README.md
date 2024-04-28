@@ -33,40 +33,6 @@ If you're familiar with deploying Express applications you should be right at ho
 - `build/server`
 - `build/client`
 
-```
-portfolio
-├─ .eslintrc.cjs
-├─ .gitignore
-├─ README.md
-├─ app
-│  ├─ db
-│  │  └─ user.json
-│  ├─ entry.client.tsx
-│  ├─ entry.server.tsx
-│  ├─ root.tsx
-│  ├─ routes
-│  │  └─ _index.tsx
-│  └─ src
-│     ├─ .babelrc
-│     ├─ components
-│     │  ├─ BriefIntro.tsx
-│     │  ├─ Experiences.tsx
-│     │  ├─ Header.tsx
-│     │  ├─ Styles.ts
-│     │  └─ type.ts
-│     └─ screens
-│        └─ WorkPanel.tsx
-├─ env.d.ts
-├─ index.d.ts
-├─ package.json
-├─ public
-│  └─ favicon.ico
-├─ server.js
-├─ tsconfig.json
-└─ vite.config.ts
-
-```
-
 ### create free logo
 
 https://logo.com/
