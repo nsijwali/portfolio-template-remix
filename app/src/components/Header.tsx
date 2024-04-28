@@ -3,7 +3,7 @@ import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import LogoRenderer from './LogoRenderer';
 import Pill from './Pill';
-import { StyledHeader } from './Styles';
+import { StyledHeader } from './component.styles';
 
 const Header = () => {
 	const navigate = useNavigate();

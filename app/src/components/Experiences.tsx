@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { CommonWrapper } from './Styles';
+import { CommonWrapper } from './component.styles';
 import { Experience } from './type';
 
 const Experiences = ({ experience = [], resumeLink }: any) => {
@@ -14,15 +14,15 @@ const Experiences = ({ experience = [], resumeLink }: any) => {
 			{experience?.map(({ company, skillsUsed, duration }: Experience) => (
 				<div className='w-full flex gap-1 items-baseline' key={uuidv4()}>
 					<div className='sm:w-1/3 w-1/2 flex items-baseline flex-col'>
-						<span className='sm:text-lg text-sm sm:font-medium'>{company}</span>
-						<span className='text-gray-400 sm:text-sm text-xs'>
-							~{duration}
+						<span className='sm:text-lg text-sm font-black'>{company}</span>
+						<span className='text-gray-400 sm:text-sm text-xs font-extralight'>
+							{duration}
 						</span>
 					</div>
 					<Link
 						reloadDocument={false}
 						target='_blank'
-						className='pt-2 sm:w-2/3 w-1/2 sm:text-base text-sm break-words hover:text-gray-400'
+						className='pt-2 sm:w-2/3 w-1/2 sm:text-base text-sm break-words hover:text-gray-400 font-extralight'
 						title='resume?'
 						to={resumeLink || ''}
 					>

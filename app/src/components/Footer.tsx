@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from '@remix-run/react';
 import { WiDirectionUpRight } from 'react-icons/wi';
 import React, { useEffect, useState, useMemo } from 'react';
-import { StyledFooter } from './Styles';
+import { StyledFooter } from './component.styles';
 import { isMobileDevice } from '~/utils/utils';
 
 export const Footer = () => {

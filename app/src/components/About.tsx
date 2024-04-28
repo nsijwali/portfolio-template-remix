@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommonWrapper } from './Styles';
+import { CommonWrapper } from './component.styles';
 
 const About = ({ summary }: { summary: string }) => {
 	return (

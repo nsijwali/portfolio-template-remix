@@ -10,7 +10,7 @@ import { SiRedux } from 'react-icons/si';
 import { SiJquery } from 'react-icons/si';
 import { SiAngular } from 'react-icons/si';
 import { SiWebpack } from 'react-icons/si';
-import { CommonWrapper } from './Styles';
+import { CommonWrapper } from './component.styles';
 import { Link } from '@remix-run/react';
 import { isMobileDevice } from '~/utils/utils';
 
@@ -89,27 +89,28 @@ const Skills = ({
 		return result;
 	};
 	return (
-		<CommonWrapper className='w-full sm:w-8/12 max-w-screen-2xl relative p-1 sm:p-2 xs:p-2 h-60'>
+		<CommonWrapper className='w-full sm:w-8/12 max-w-screen-2xl relative p-1 sm:p-2 xs:p-2 h-auto'>
 			<span className='flex items-center gap-2'>
 				<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
 				<span className='text-gray-400 text-xs'>SKILLS</span>
 			</span>
-			<Link
-				reloadDocument={false}
-				target='_blank'
-				className='hover-svg flex pt-2 sm:font-medium gap-4 sm:gap-16 text-sm flex-wrap hover:text-gray-400 '
-				title='resume?'
-				to={resumeLink || ''}
-			>
+			<div className='flex pt-2 sm:font-medium gap-4 sm:gap-16 text-sm flex-wrap'>
 				{skills.map((name) => (
-					<div className='flex flex-col gap-1 items-center' key={uuidv4()}>
+					<Link
+						className='flex flex-col gap-1 items-center hover:text-gray-400'
+						key={uuidv4()}
+						title='resume?'
+						reloadDocument={false}
+						target='_blank'
+						to={resumeLink || ''}
+					>
 						<>{skillObjectFormatter(name).component}</>
-						<span className='text-sm sm:text-base '>
+						<span className='text-sm sm:text-base font-semibold'>
 							{skillObjectFormatter(name).label}
 						</span>
-					</div>
+					</Link>
 				))}
-			</Link>
+			</div>
 		</CommonWrapper>
 	);
 };
