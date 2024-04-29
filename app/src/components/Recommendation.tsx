@@ -24,7 +24,7 @@ const Recommendation = ({
 	};
 	const cardVariants: Variants = {
 		offscreen: {
-			y: 300,
+			y: 250,
 		},
 		onscreen: {
 			y: 0,
@@ -55,7 +55,7 @@ const Recommendation = ({
 					<div className='px-12 py-1 h-48 sm:h-auto overflow-auto font-extralight'>
 						{recommendations[currentIndex].praise}
 					</div>
-					<span className='absolute right-1 bottom-3 sm:-bottom-7 xs:-bottom-7'>
+					<span className='absolute right-1 bottom-3 sm:-bottom-10 xs:-bottom-7'>
 						<div>{recommendations[currentIndex].from}</div>
 						<div className='text-sm text-gray-400 font-extralight'>
 							{recommendations[currentIndex].designation}

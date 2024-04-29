@@ -143,7 +143,7 @@ const StyledHeader = styled.div`
 	}
 `;
 
-const StyledFooter = styled.div``;
+const StyledFooter = styled(motion.div)``;
 
 const CommonWrapper = styled(motion.div)<any>`
 	.dot {
