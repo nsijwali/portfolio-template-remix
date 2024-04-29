@@ -1,6 +1,7 @@
 import React from 'react';
 import imgURL from '/images/fly3.gif';
-const Cursor = ({ x, y }: any) => {
+const Cursor = ({ x, y, isMobile }: any) => {
+	if (isMobile) return <></>;
 	return (
 		<>
 			<img

@@ -14,6 +14,7 @@ import userInfo from '~/db/user.json';
 import Header from './src/components/Header';
 import { Footer } from './src/components/Footer';
 import Cursor from './src/components/Cursor';
+import { isMobileDevice, isMobileDevice } from './utils/utils';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
@@ -59,12 +60,20 @@ export const loader = async () => {
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	const [state, setState] = useState({ x: 0, y: 0 });
+	const [isMobile, setIsMobile] = useState(true);
+
 	useEffect(() => {
-		document.addEventListener('mousemove', scrollAnimator);
+		setIsMobile(isMobileDevice());
+	}, []);
+
+	useEffect(() => {
+		if (!isMobile) {
+			document.addEventListener('mousemove', scrollAnimator);
+		}
 		return () => {
 			document.removeEventListener('mousemove', scrollAnimator);
 		};
-	}, []);
+	}, [isMobile]);
 
 	const scrollAnimator = (event: MouseEvent) => {
 		const fly = document.querySelectorAll('.fly');
@@ -100,7 +109,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					minHeight: '100%',
 				}}
 			>
-				<Cursor x={state.x} y={state.y} />
+				<Cursor x={state.x} y={state.y} isMobile={isMobile} />
 				<Header />
 				<div
 					className='font-sans px-2 pt-32 sm:pt-40 sm:pb-40 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden font-mono'
