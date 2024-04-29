@@ -6,7 +6,12 @@ import { Experience } from './type';
 
 const Experiences = ({ experience = [], resumeLink }: any) => {
 	return (
-		<CommonWrapper className='w-full sm:w-8/12 max-w-screen-2xl relative p-1 sm:p-2 xs:p-2 h-70 sm:h-60'>
+		<CommonWrapper
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			viewport={{ once: true }}
+			className='w-full sm:w-8/12 max-w-screen-2xl relative p-1 sm:p-2 xs:p-2 h-70 sm:h-60'
+		>
 			<span className='flex items-center gap-2'>
 				<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
 				<span className='text-gray-400 text-xs'>EXPERIENCE</span>

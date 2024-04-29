@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 const Chrome = styled.div`
 	-webkit-backdrop-filter: none;
@@ -144,7 +145,7 @@ const StyledHeader = styled.div`
 
 const StyledFooter = styled.div``;
 
-const CommonWrapper = styled.div<any>`
+const CommonWrapper = styled(motion.div)<any>`
 	.dot {
 		box-shadow: 0 0 20px #fff;
 	}

@@ -1,3 +1,4 @@
+import { motion, Variants } from 'framer-motion';
 import React, { useState } from 'react';
 import { CiCircleChevLeft, CiCircleChevRight } from 'react-icons/ci';
 import { CommonWrapper } from './component.styles';
@@ -21,13 +22,35 @@ const Recommendation = ({
 			prevIndex === recommendations.length - 1 ? 0 : prevIndex + 1,
 		);
 	};
+	const cardVariants: Variants = {
+		offscreen: {
+			y: 300,
+		},
+		onscreen: {
+			y: 0,
+			transition: {
+				type: 'spring',
+				bounce: 0.4,
+				duration: 0.8,
+			},
+		},
+	};
+
 	return (
-		<CommonWrapper className='w-full sm:w-8/12 max-w-screen-2xl relative p-1 sm:p-2 xs:p-2 h-80 sm:h-60'>
+		<CommonWrapper
+			initial={'offscreen'}
+			whileInView='onscreen'
+			viewport={{ amount: 0.8 }}
+			className='w-full sm:w-8/12 max-w-screen-2xl relative p-1 sm:p-2 xs:p-2 h-80 sm:h-60'
+		>
 			<span className='flex items-center gap-2'>
 				<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
 				<span className='text-gray-400 text-xs'>RECOMMENDATIONS</span>
 			</span>
-			<div className='w-full h-full flex justify-center items-center flex-col relative'>
+			<motion.div
+				variants={cardVariants}
+				className='w-full h-full flex justify-center items-center flex-col relative'
+			>
 				<>
 					<div className='px-12 py-1 h-48 sm:h-auto overflow-auto font-extralight'>
 						{recommendations[currentIndex].praise}
@@ -51,7 +74,7 @@ const Recommendation = ({
 						onClick={goToNextSlide}
 					/>
 				</div>
-			</div>
+			</motion.div>
 		</CommonWrapper>
 	);
 };
