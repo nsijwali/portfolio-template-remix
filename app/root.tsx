@@ -7,11 +7,13 @@ import {
 	ScrollRestoration,
 	useRouteError,
 } from '@remix-run/react';
-import React from 'react';
+import { gsap } from 'gsap';
+import React, { useEffect, useState } from 'react';
 import stylesheet from '~/tailwind.css?url';
 import userInfo from '~/db/user.json';
 import Header from './src/components/Header';
 import { Footer } from './src/components/Footer';
+import Cursor from './src/components/Cursor';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
@@ -56,6 +58,28 @@ export const loader = async () => {
 };
 
 export function Layout({ children }: { children: React.ReactNode }) {
+	const [state, setState] = useState({ x: 0, y: 0 });
+	useEffect(() => {
+		document.addEventListener('mousemove', scrollAnimator);
+		return () => {
+			document.removeEventListener('mousemove', scrollAnimator);
+		};
+	}, []);
+
+	const scrollAnimator = (event: MouseEvent) => {
+		const fly = document.querySelectorAll('.fly');
+		gsap.set(fly, { xPercent: -150, yPercent: -50 });
+		const targets = gsap.utils.toArray(fly);
+		gsap.to(targets, {
+			duration: 1,
+			x: event.clientX - 50,
+			y: event.clientY + 20,
+			ease: 'bounce.inOut',
+			overwrite: 'auto',
+			stagger: 0.02,
+		});
+		setState({ x: event.x - 20, y: event.y });
+	};
 	return (
 		<html lang='en'>
 			<head>
@@ -76,6 +100,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					minHeight: '100%',
 				}}
 			>
+				<Cursor x={state.x} y={state.y} />
 				<Header />
 				<div
 					className='font-sans px-2 pt-32 sm:pt-40 sm:pb-40 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden font-mono'
