@@ -72,9 +72,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 		const targets = gsap.utils.toArray(fly);
 		gsap.to(targets, {
 			duration: 1,
-			x: event.clientX - 50,
-			y: event.clientY + 20,
-			ease: 'bounce.inOut',
+			x: event.clientX - 10,
+			y: event.clientY + 10,
+			ease: 'back.inOut',
 			overwrite: 'auto',
 			stagger: 0.02,
 		});
