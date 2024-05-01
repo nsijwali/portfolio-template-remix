@@ -5,6 +5,7 @@ import { Link } from '@remix-run/react';
 import { useKeenSlider } from 'keen-slider/react';
 import { CommonWrapper } from './component.styles';
 import { Recommendations } from './type';
+import { FaQuoteLeft } from 'react-icons/fa6';
 
 const Recommendation = ({
 	recommendations,
@@ -76,11 +77,13 @@ const Recommendation = ({
 						target='_blank'
 						to={url || ''}
 					>
-						<div className='p-1 h-48 sm:h-auto font-extralight overflow-y-auto sm:text-lg'>
+						{' '}
+						<FaQuoteLeft className='top-0 left-0 absolute text-gray-400' />
+						<div className='p-1 pl-8 h-48 sm:h-auto font-extralight overflow-y-auto sm:text-lg relative'>
 							{recommendation.praise}
 						</div>
-						<span className='absolute right-1'>
-							<div>{recommendation.from}</div>
+						<span className='float-right'>
+							<div className='text-gray-400'>{recommendation.from}</div>
 							<div className='text-sm text-gray-400 font-extralight'>
 								{recommendation.designation}
 							</div>
