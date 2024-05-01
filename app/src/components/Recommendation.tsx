@@ -13,8 +13,6 @@ const Recommendation = ({
 	recommendations: Array<Recommendations>;
 	url: string;
 }) => {
-	// const [currentSlide, setCurrentSlide] = useState(0);
-	// const [loaded, setLoaded] = useState(false);
 	const [sliderRef] = useKeenSlider<HTMLDivElement>(
 		{
 			loop: true,
@@ -31,7 +29,7 @@ const Recommendation = ({
 					if (mouseOver) return;
 					timeout = setTimeout(() => {
 						slider.next();
-					}, 50000);
+					}, 5000);
 				}
 				slider.on('created', () => {
 					slider.container.addEventListener('mouseover', () => {
@@ -50,27 +48,6 @@ const Recommendation = ({
 			},
 		],
 	);
-
-	// const goToPrevSlide = (e: any) => {
-	// 	e.stopPropagation() || instanceRef.current?.next();
-	// };
-
-	// const goToNextSlide = (e: any) => {
-	// 	e.stopPropagation() || instanceRef.current?.next();
-	// };
-	// const cardVariants: Variants = {
-	// 	offscreen: {
-	// 		y: 250,
-	// 	},
-	// 	onscreen: {
-	// 		y: 0,
-	// 		transition: {
-	// 			type: 'spring',
-	// 			bounce: 0.4,
-	// 			duration: 0.8,
-	// 		},
-	// 	},
-	// };
 
 	return (
 		<CommonWrapper
@@ -110,24 +87,6 @@ const Recommendation = ({
 						</span>
 					</Link>
 				))}
-
-				{/* <div className='flex justify-between h-min absolute w-full inset-y-1/2'>
-					{loaded && instanceRef.current && (
-						<>
-							<CiCircleChevLeft
-								size='48'
-								className='hover:text-gray-400 cursor-pointer'
-								onClick={goToPrevSlide}
-								// disabled={currentSlide === 0}
-							/>
-							<CiCircleChevRight
-								className='hover:text-gray-400 cursor-pointer'
-								size='48'
-								onClick={goToNextSlide}
-							/>
-						</>
-					)}
-				</div> */}
 			</motion.div>
 		</CommonWrapper>
 	);
