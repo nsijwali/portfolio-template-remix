@@ -9,12 +9,13 @@ import {
 } from '@remix-run/react';
 import { gsap } from 'gsap';
 import React, { useEffect, useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import stylesheet from '~/tailwind.css?url';
 import userInfo from '~/db/user.json';
 import Header from './src/components/Header';
 import { Footer } from './src/components/Footer';
 import Cursor from './src/components/Cursor';
-import { isMobileDevice, isMobileDevice } from './utils/utils';
+import { isMobileDevice } from './utils/utils';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
@@ -119,6 +120,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					}}
 				>
 					{children}
+					<Analytics />
 				</div>
 				<Footer />
 				<ScrollRestoration />
