@@ -10,6 +10,7 @@ import {
 import { gsap } from 'gsap';
 import React, { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/remix';
 import stylesheet from '~/tailwind.css?url';
 import userInfo from '~/db/user.json';
 import Header from './src/components/Header';
@@ -121,6 +122,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				>
 					{children}
 					<Analytics />
+					<SpeedInsights />
 				</div>
 				<Footer />
 				<ScrollRestoration />
