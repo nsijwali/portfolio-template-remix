@@ -12,7 +12,6 @@ import { SiJquery } from 'react-icons/si';
 import { SiAngular } from 'react-icons/si';
 import { SiWebpack } from 'react-icons/si';
 import { CommonWrapper } from './component.styles';
-
 import { isMobileDevice } from '~/utils/utils';
 
 const returnSVG = (fill: string = '#fff', size: string) => (

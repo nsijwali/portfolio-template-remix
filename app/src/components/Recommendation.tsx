@@ -77,8 +77,7 @@ const Recommendation = ({
 						target='_blank'
 						to={url || ''}
 					>
-						{' '}
-						<FaQuoteLeft className='top-0 left-0 absolute text-gray-400' />
+						<FaQuoteLeft className='top-0 absolute text-gray-400 left-2' />
 						<div className='p-1 pl-8 h-48 sm:h-auto font-extralight overflow-y-auto sm:text-lg relative'>
 							{recommendation.praise}
 						</div>
