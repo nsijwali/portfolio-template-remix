@@ -17,7 +17,7 @@ const LogoRenderer = () => {
 		>
 			<img
 				src={data.images[currentImageIndex]}
-				className='h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover'
+				className='h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover backdrop-blur'
 				alt='logo'
 			/>
 		</div>
