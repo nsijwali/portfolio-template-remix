@@ -69,25 +69,35 @@ const Recommendation = ({
 				ref={sliderRef}
 			>
 				{recommendations?.map((recommendation: Recommendations) => (
-					<Link
+					<div
 						className='keen-slider__slide h-64 sm:h-auto md:h-auto'
 						key={uuidv4()}
-						title='check it out?'
-						reloadDocument={false}
-						target='_blank'
-						to={url || ''}
 					>
 						<FaQuoteLeft className='top-0 absolute text-gray-400 left-2' />
-						<div className='p-1 pl-8 h-48 sm:h-auto font-extralight overflow-y-auto sm:text-lg relative'>
+						<Link
+							title='check it out?'
+							reloadDocument={false}
+							target='_blank'
+							to={url || ''}
+							className='p-1 pl-8 h-48 sm:h-auto font-extralight overflow-y-auto sm:text-lg relative'
+						>
 							{recommendation.praise}
-						</div>
+						</Link>
 						<span className='float-right'>
-							<div className='text-gray-400'>{recommendation.from}</div>
+							<Link
+								className='text-gray-400'
+								title='view profile?'
+								reloadDocument={false}
+								target='_blank'
+								to={recommendation.profile || ''}
+							>
+								{recommendation.from}
+							</Link>
 							<div className='text-sm text-gray-400 font-extralight'>
 								{recommendation.designation}
 							</div>
 						</span>
-					</Link>
+					</div>
 				))}
 			</motion.div>
 		</CommonWrapper>

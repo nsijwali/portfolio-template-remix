@@ -30,4 +30,5 @@ export interface Recommendations {
 	from?: string;
 	designation?: string;
 	praise?: string;
+	profile?: string;
 }
