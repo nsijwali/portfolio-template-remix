@@ -143,7 +143,11 @@ const StyledHeader = styled.div`
 	}
 `;
 
-const StyledFooter = styled(motion.div)``;
+const StyledFooter = styled(motion.div)`
+	.rotate-logo {
+		animation: spin 10s linear infinite;
+	}
+`;
 
 const CommonWrapper = styled(motion.div)<any>`
 	.dot {

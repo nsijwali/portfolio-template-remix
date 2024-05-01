@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from '@remix-run/react';
 import { SiRemix } from 'react-icons/si';
 import { SiReact } from 'react-icons/si';
 import { SiJavascript } from 'react-icons/si';
@@ -11,7 +12,7 @@ import { SiJquery } from 'react-icons/si';
 import { SiAngular } from 'react-icons/si';
 import { SiWebpack } from 'react-icons/si';
 import { CommonWrapper } from './component.styles';
-import { Link } from '@remix-run/react';
+
 import { isMobileDevice } from '~/utils/utils';
 
 const returnSVG = (fill: string = '#fff', size: string) => (

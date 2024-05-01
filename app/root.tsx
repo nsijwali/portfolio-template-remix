@@ -12,6 +12,7 @@ import React, { useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/remix';
 import stylesheet from '~/tailwind.css?url';
+import styles from 'keen-slider/keen-slider.min.css?url';
 import userInfo from '~/db/user.json';
 import Header from './src/components/Header';
 import { Footer } from './src/components/Footer';
@@ -20,6 +21,7 @@ import { isMobileDevice } from './utils/utils';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
+	{ rel: 'stylesheet', href: styles },
 ];
 
 export const meta = () => [

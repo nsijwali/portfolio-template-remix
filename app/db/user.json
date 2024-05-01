@@ -11,7 +11,12 @@
 	"gitHubLink": "https://github.com/nsijwali",
 	"linkedInLink": "https://www.linkedin.com/in/nitinsij/",
 	"resumeLink": "https://drive.google.com/file/d/1SzeLFnIohGL6-HgpcguDW9zigvKuFgT6/view",
-	"images": ["/images/logo.webp", "/images/logo-2.jpeg", "/images/logo-3.jpeg"],
+	"images": [
+		"/images/heroLogo.webp",
+		"/images/logo-2.jpeg",
+		"/images/logo-3.jpeg"
+	],
+	"recommendationUrl": "https://www.linkedin.com/in/nitinsij/details/recommendations/?detailScreenTabIndex=0",
 	"skills": [
 		{
 			"name": "JavaScript",
@@ -60,20 +65,34 @@
 	],
 	"summary": "Experienced Frontend Developer proficient in React.js, Angular, JavaScript & TypeScript. Skilled in leading teams & crafting user-friendly interfaces.",
 	"honors_awards": ["Star Performer", "SPOT Award", "INSTA Award"],
+	"Project": [
+		{
+			"pName": "Items Grouping and Management",
+			"description": "Involved in Item Group Management (IGM) for variations, collections, PCR , Item Relationships and digital assets for vendor and internal users to submit during item setup",
+			"responsibilities": [
+				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
+				"Built Reusable React components with modular CSS, and state management on the client with Redux",
+				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse",
+				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences.",
+				"Guiding juniors and mentoring them to build the bug free, well written optimzed code",
+				"Proving use case of functionalities using Fullstory analytics tool."
+			]
+		}
+	],
 	"recommendations": [
 		{
 			"from": "Amy Merritt",
-			"designation": "Senior Product Manager @Lowe's",
+			"designation": "Sr. Product @Lowe's",
 			"praise": "Nitin is a quite insightful and creative engineer. He has been instrumental in delivering major features that lead to business transformation. Nitin's development work is always high quality and is delivered in a timely way. Every day working with Nitin is a privilege."
 		},
 		{
 			"from": "Kunal Kaul",
-			"designation": "Lead Software Engineer @Lowe's",
+			"designation": "Lead @Lowe's",
 			"praise": "One of the best Senior Engineer, I've had the pleasure of working with on a team. Nitin is proactive, takes ownership while being a great team player too. He is great at mentoring juniors, guiding and challenging them to deliver their best. Nitin has a great ability to translate complex designs into seamless user experiences. He asks the right questions early, avoiding complexities which might creep in at later stages of development. In case of issues with the User Experience he always comes forward with solutions to choose from, which imo, is one of the signs of a good engineer. Wish him all the best and I know he will do great at whatever he puts his mind to!"
 		},
 		{
 			"from": "Steven Silver",
-			"designation": "Associate Software Engineer @Lowe's",
+			"designation": "Associate @Lowe's",
 			"praise": "Nitin is an excellent mentor and teacher and has been integral in my career. he continues to deliver results while training and mentoring others.Showing expertise in React, Typescript, JavaScript, HTML, CSS. also managing ci/cd pipelines such as Jenkins, Docker, ArgoCD."
 		}
 	],
@@ -83,7 +102,6 @@
 			"position": "Senior Software Engineer(IC)",
 			"duration": "Jan 2021 - Present",
 			"location": "Bengaluru, Karnataka, India",
-			"summary": "Involved in Item Group Management (IGM) for variations, collections, PCR , Item Relationships and digital assets for vendor and internal users to submit during item setup",
 			"skillsUsed": [
 				"JavaScript",
 				"TypeScript",
@@ -96,14 +114,6 @@
 				"Web app",
 				"Mentoring",
 				"Code review"
-			],
-			"responsibilities": [
-				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
-				"Built Reusable React components with modular CSS, and state management on the client with Redux",
-				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse",
-				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences.",
-				"Guiding juniors and mentoring them to build the bug free, well written optimzed code",
-				"Proving use case of functionalities using Fullstory analytics tool."
 			],
 			"imageURL": "https://i.postimg.cc/cLc64M7Y/project-lowes.png"
 		},
