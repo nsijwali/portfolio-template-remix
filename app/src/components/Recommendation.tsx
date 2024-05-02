@@ -30,7 +30,7 @@ const Recommendation = ({
 					if (mouseOver) return;
 					timeout = setTimeout(() => {
 						slider.next();
-					}, 5000);
+					}, 50000);
 				}
 				slider.on('created', () => {
 					slider.container.addEventListener('mouseover', () => {
@@ -55,7 +55,7 @@ const Recommendation = ({
 			initial={'offscreen'}
 			whileInView='onscreen'
 			viewport={{ amount: 0.8 }}
-			className='w-full sm:w-8/12 max-w-screen-2xl relative p-1 sm:p-2 xs:p-2 h-80 sm:h-60'
+			className='w-full sm:w-8/12 max-w-screen-2xl relative p-1 sm:p-2 xs:p-2 h-auto'
 		>
 			<span className='flex items-center gap-2'>
 				<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
@@ -70,19 +70,13 @@ const Recommendation = ({
 			>
 				{recommendations?.map((recommendation: Recommendations) => (
 					<div
-						className='keen-slider__slide h-64 sm:h-auto md:h-auto'
+						className='keen-slider__slide max-h-60 overflow-y-auto'
 						key={uuidv4()}
 					>
 						<FaQuoteLeft className='top-0 absolute text-gray-400 left-2' />
-						<Link
-							title='check it out?'
-							reloadDocument={false}
-							target='_blank'
-							to={url || ''}
-							className='p-1 pl-8 h-48 sm:h-auto font-extralight overflow-y-auto sm:text-lg relative'
-						>
+						<div className='p-1 pl-8 font-extralight overflow-y-auto sm:text-lg max-h-48'>
 							{recommendation.praise}
-						</Link>
+						</div>
 						<span className='float-right'>
 							<Link
 								className='text-gray-400'
