@@ -30,7 +30,7 @@ const Recommendation = ({
 					if (mouseOver) return;
 					timeout = setTimeout(() => {
 						slider.next();
-					}, 50000);
+					}, 5000);
 				}
 				slider.on('created', () => {
 					slider.container.addEventListener('mouseover', () => {
