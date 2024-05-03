@@ -65,10 +65,11 @@
 	],
 	"summary": "Experienced Frontend Developer proficient in React.js, Angular, JavaScript & TypeScript. Skilled in leading teams & crafting user-friendly interfaces.",
 	"honors_awards": ["Star Performer", "SPOT Award", "INSTA Award"],
-	"Project": [
+	"project": [
 		{
-			"pName": "Items Grouping and Management",
-			"description": "Involved in Item Group Management (IGM) for variations, collections, PCR , Item Relationships and digital assets for vendor and internal users to submit during item setup",
+			"pName": "Product Variations",
+			"description": "Items that are same but have different options(eg: colors, size) are grouped for a single presentation and customer selects purchase option",
+			"imageUrl": "/images/pvs.png",
 			"responsibilities": [
 				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
 				"Built Reusable React components with modular CSS, and state management on the client with Redux",

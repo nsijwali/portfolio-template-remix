@@ -1,10 +1,19 @@
+import { useRouteLoaderData } from '@remix-run/react';
 import React from 'react';
-import WorkPanel from '../src/screens/WorkPanel';
+import BriefIntro from '~/src/components/BriefIntro';
+import Projects from '~/src/components/Projects';
 
 const Index = () => {
+	const { data } = useRouteLoaderData('root');
 	return (
 		<>
-			<WorkPanel />
+			<BriefIntro
+				tagline={data?.tagline}
+				role={data?.role}
+				area={data?.area}
+				currentOrg={data?.currentOrg}
+			/>
+			<Projects project={data?.project} />
 		</>
 	);
 };

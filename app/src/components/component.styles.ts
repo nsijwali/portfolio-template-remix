@@ -97,6 +97,19 @@ const Chrome = styled.div`
 		left: 0%;
 		right: 0%;
 	}
+	.hover-project-img {
+		box-shadow: 0 40px 50px 10px rgba(0, 0, 0, 0.25);
+		border: 1px solid rgba(242, 242, 242, 0.3);
+	}
+	.project:hover {
+		opacity: 1;
+		background-image: radial-gradient(
+				circle at 50% 0,
+				rgba(127, 207, 255, 0.2),
+				rgba(0, 0, 0, 0) 80%
+			),
+			radial-gradient(circle at 50% 0, #035, rgba(0, 0, 0, 0));
+	}
 `;
 
 const Dot = styled.div`
