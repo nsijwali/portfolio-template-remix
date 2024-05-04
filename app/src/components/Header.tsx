@@ -1,13 +1,20 @@
 import { Link, useNavigate, useLoaderData } from '@remix-run/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import LogoRenderer from './LogoRenderer';
 import Pill from './Pill';
 import { StyledHeader } from './component.styles';
+import MobileNav from './MobileNav';
+import { isMobileDevice } from '~/utils/utils';
 
 const Header = () => {
 	const navigate = useNavigate();
 	const { data } = useLoaderData() || [];
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		setIsMobile(isMobileDevice());
+	}, [isMobileDevice]);
 
 	const handleRoute = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 		navigate('/');
@@ -25,20 +32,26 @@ const Header = () => {
 			</div>
 			<Pill />
 			<span className='flex gap-1'>
-				<Link
-					target='_blank'
-					className='hover:text-yellow-300 backdrop-blur'
-					to={data.gitHubLink}
-				>
-					<FaGithub size='28' />
-				</Link>
-				<Link
-					target='_blank'
-					className='hover:text-yellow-300 backdrop-blur'
-					to={data.linkedInLink}
-				>
-					<FaLinkedin size='28' />
-				</Link>
+				{!isMobile ? (
+					<>
+						<Link
+							target='_blank'
+							className='hover:text-yellow-300 backdrop-blur'
+							to={data.gitHubLink}
+						>
+							<FaGithub size='28' />
+						</Link>
+						<Link
+							target='_blank'
+							className='hover:text-yellow-300 backdrop-blur'
+							to={data.linkedInLink}
+						>
+							<FaLinkedin size='28' />
+						</Link>
+					</>
+				) : (
+					<MobileNav />
+				)}
 			</span>
 		</StyledHeader>
 	);

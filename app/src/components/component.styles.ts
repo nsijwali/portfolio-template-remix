@@ -154,6 +154,21 @@ const StyledHeader = styled.div`
 		background-color: rgba(242, 242, 242, 0.05);
 		border-radius: 18px;
 	}
+	.mobile-nav {
+		background-color: rgba(242, 242, 242, 0.08);
+		border-color: rgba(242, 242, 242, 0.2);
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+		width: 48px;
+		height: 48px;
+		.popover-body {
+			grid-row-gap: 4px;
+			-webkit-backdrop-filter: blur(20px);
+			backdrop-filter: blur(20px);
+			background-color: rgba(242, 242, 242, 0.05);
+			border: 1px solid rgba(242, 242, 242, 0.1);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+		}
+	}
 `;
 
 const StyledFooter = styled(motion.div)`
