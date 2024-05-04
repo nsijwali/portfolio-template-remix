@@ -29,7 +29,7 @@ const Projects = ({ project }: any) => {
 					</div>
 					<div className='flex justify-center w-full '>
 						<img
-							className='hover-project-img sm:h-80 h-40 relative rounded-t-2xl w-full sm:w-9/12 opacity-50 hover:opacity-100 transition-opacity duration-300
+							className='hover-project-img sm:h-80 h-38 md:h-72 relative rounded-t-2xl w-full sm:w-9/12 md:w-11/12 opacity-50 hover:opacity-100 transition-opacity duration-300
                             hover:scale-110 transform transition-transform duration-300'
 							src={imageUrl}
 							alt={pName}
