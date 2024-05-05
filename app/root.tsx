@@ -111,12 +111,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					color: '#f2f2f2',
 					backgroundColor: '#101010',
 					minHeight: '100%',
+					WebkitFontSmoothing: 'antialiased',
+					fontFamily: 'NType82Mono',
 				}}
 			>
 				<Cursor x={state.x} y={state.y} isMobile={isMobile} />
 				<Header />
 				<div
-					className='font-sans px-2 pt-32 sm:pt-40 sm:pb-40 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden font-mono'
+					className='px-2 pt-32 sm:pt-40 sm:pb-40 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden'
 					style={{
 						backgroundImage:
 							'radial-gradient(circle closest-corner at 50% 0, rgba(242, 242, 242, .15), rgba(0, 0, 0, 0)',

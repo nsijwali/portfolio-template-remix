@@ -68,8 +68,21 @@
 	"project": [
 		{
 			"pName": "Product Variations",
-			"description": "Items that are same but have different options(eg: colors, size) are grouped for a single presentation and customer selects purchase option",
+			"description": "Items that are same but have different options(eg: colors, size) are grouped for a single presentation and customer selects purchase option.",
 			"imageUrl": "/images/pvs.png",
+			"responsibilities": [
+				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
+				"Built Reusable React components with modular CSS, and state management on the client with Redux",
+				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse",
+				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences.",
+				"Guiding juniors and mentoring them to build the bug free, well written optimzed code",
+				"Proving use case of functionalities using Fullstory analytics tool."
+			]
+		},
+		{
+			"pName": "Collections and PCRs",
+			"description": "A lifestyle shopping experience where customers are presented similar items based on the theme and they can choose to buy them as set or specific item.",
+			"imageUrl": "/images/collections.png",
 			"responsibilities": [
 				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
 				"Built Reusable React components with modular CSS, and state management on the client with Redux",

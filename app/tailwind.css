@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+	font-family: 'NType82Mono';
+	src: url('/fonts/NType82Mono-Regular.otf') format('opentype');
+}

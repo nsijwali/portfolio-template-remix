@@ -38,7 +38,6 @@ const Chrome = styled.div`
 			-webkit-text-size-adjust: 100%;
 			--background: #101010;
 			--on-background: #f2f2f2;
-			font-family: Arial, sans-serif;
 			font-size: 14px;
 			line-height: 20px;
 			color: var(--on-background);
