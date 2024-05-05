@@ -21,7 +21,7 @@ import { isMobileDevice } from './utils/utils';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
-	{ rel: 'stylesheet', href: styles, media: 'print' },
+	{ rel: 'stylesheet', href: styles },
 ];
 
 export const meta = () => [
