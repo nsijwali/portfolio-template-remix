@@ -38,6 +38,7 @@ const Header = () => {
 							target='_blank'
 							className='hover:text-yellow-300 backdrop-blur'
 							to={data.gitHubLink}
+							aria-label='Git'
 						>
 							<FaGithub size='28' />
 						</Link>
@@ -45,6 +46,7 @@ const Header = () => {
 							target='_blank'
 							className='hover:text-yellow-300 backdrop-blur'
 							to={data.linkedInLink}
+							aria-label='linkedin'
 						>
 							<FaLinkedin size='28' />
 						</Link>

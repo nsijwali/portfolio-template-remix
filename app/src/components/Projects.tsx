@@ -38,7 +38,7 @@ const Projects = ({ project }: any) => {
 						className='hover-project-img sm:h-80 h-38 md:h-72 relative rounded-t-2xl w-full sm:w-9/12 md:w-11/12 opacity-80 hover:opacity-100 transition-opacity duration-300
                             hover:scale-110 transform transition-transform duration-300'
 						src={imageUrl}
-						load='lazy'
+						loading='lazy'
 						alt={pName}
 						width='100%'
 						height='auto'

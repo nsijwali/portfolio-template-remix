@@ -105,6 +105,7 @@ const Skills = ({ skills }: { skills: Array<ISkill> }) => {
 						title={`Learn ${name}`}
 						reloadDocument={false}
 						target='_blank'
+						aria-label={name}
 						to={url || ''}
 					>
 						<>{skillObjectFormatter(name).component}</>

@@ -21,6 +21,7 @@ const Pill = () => {
 						'nav-option flex justify-center items-center rounded-2xl w-20 h-9 text-center ' +
 						(location.pathname === '/' ? 'active-tab' : '')
 					}
+					aria-label='home'
 					to={'/'}
 				>
 					Home
@@ -30,6 +31,7 @@ const Pill = () => {
 						(location.pathname === '/info' ? 'active-tab ' : '') +
 						'nav-option flex justify-center items-center rounded-2xl w-20 h-9 text-center'
 					}
+					aria-label='info'
 					to={'/info'}
 				>
 					Info

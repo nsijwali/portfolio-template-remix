@@ -47,6 +47,7 @@ export const Footer = () => {
 									target='_blank'
 									to={data?.linkedInLink || ''}
 									className='flex items-center hover:text-yellow-300'
+									aria-label='Linkedin'
 								>
 									Linkedin
 									<WiDirectionUpRight size='30' />
@@ -55,6 +56,7 @@ export const Footer = () => {
 									className='flex items-center hover:text-yellow-300'
 									target='_blank'
 									to={data?.gitHubLink || ''}
+									aria-label='Git'
 								>
 									Git
 									<WiDirectionUpRight size='30' />
@@ -67,6 +69,7 @@ export const Footer = () => {
 									target='_blank'
 									rel='noreferrer'
 									to={emailUrl}
+									aria-label='email'
 								>
 									Mail
 									<WiDirectionUpRight size='30' />
@@ -76,6 +79,7 @@ export const Footer = () => {
 									reloadDocument={false}
 									target='_blank'
 									to={data?.resumeLink || ''}
+									aria-label='Resume'
 								>
 									Resume
 									<WiDirectionUpRight size='30' />

@@ -29,6 +29,7 @@ const Experiences = ({ experience = [], resumeLink }: any) => {
 						target='_blank'
 						className='pt-2 sm:w-2/3 w-1/2 sm:text-base text-sm break-words hover:text-gray-400 font-extralight'
 						title='resume?'
+						aria-label='resume'
 						to={resumeLink || ''}
 					>
 						{(skillsUsed || []).join(', ')}

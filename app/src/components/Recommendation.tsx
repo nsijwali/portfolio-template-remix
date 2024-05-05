@@ -84,6 +84,7 @@ const Recommendation = ({
 								reloadDocument={false}
 								target='_blank'
 								to={recommendation.profile || ''}
+								aria-label='recommendationlink'
 							>
 								{recommendation.from}
 							</Link>

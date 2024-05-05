@@ -47,6 +47,7 @@ const MobileNav = () => {
 						target='_blank'
 						to={data?.linkedInLink || ''}
 						className='flex items-center hover:text-yellow-300 justify-between w-full'
+						aria-label='linkedin'
 					>
 						Linkedin
 						<WiDirectionUpRight size='30' />
@@ -55,6 +56,7 @@ const MobileNav = () => {
 						className='flex items-center hover:text-yellow-300 justify-between w-full'
 						target='_blank'
 						to={data?.gitHubLink || ''}
+						aria-label='Git'
 					>
 						Git
 						<WiDirectionUpRight size='30' />
