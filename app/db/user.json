@@ -69,7 +69,7 @@
 		{
 			"pName": "Product Variations",
 			"description": "Items that are same but have different options(eg: colors, size) are grouped for a single presentation and customer selects purchase option.",
-			"imageUrl": "/images/pvs.png",
+			"imageUrl": "/images/pvs.webp",
 			"responsibilities": [
 				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
 				"Built Reusable React components with modular CSS, and state management on the client with Redux",
@@ -82,7 +82,7 @@
 		{
 			"pName": "Collections and PCRs",
 			"description": "A lifestyle shopping experience where customers are presented similar items based on the theme and they can choose to buy them as set or specific item.",
-			"imageUrl": "/images/collections.png",
+			"imageUrl": "/images/collections.webp",
 			"responsibilities": [
 				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
 				"Built Reusable React components with modular CSS, and state management on the client with Redux",
