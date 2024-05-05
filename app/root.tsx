@@ -28,9 +28,11 @@ export const meta = () => [
 	{
 		title: 'Portfolio | Nitin Sijwali',
 	},
+	{ name: 'author', content: 'Nitin Sijwali' },
 	{
 		description:
 			'Welcome to the portfolio of Nitin Sijwali. Find information about my projects, skills, and experiences. This portfolio has been created using Remix, Reactjs and styled components',
+		name: 'description',
 	},
 	{ robots: 'index: true, follow: true' },
 	{
