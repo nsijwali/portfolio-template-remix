@@ -32,8 +32,10 @@ const BriefIntro = ({
 					<img
 						src='https://assets-global.website-files.com/63dcb6e1a80e9454b630f4c4/64647bd0f92c6bb858b22871_icon-plus.svg'
 						loading='lazy'
-						alt=''
+						alt='icon-windowbar'
 						className='icon-windowbar-plus'
+						width='24px'
+						height='24px'
 					/>
 				</div>
 				<div className='window-content px-4 py-8 sm:px-16 sm:py-24 sm:h-80 xs:h-80 h-64'>
