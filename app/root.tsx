@@ -30,6 +30,11 @@ export const meta = () => [
 	},
 	{ name: 'author', content: 'Nitin Sijwali' },
 	{
+		description:
+			'Welcome to the portfolio of Nitin Sijwali. Find information about my projects, skills, and experiences. This portfolio has been created using Remix, Reactjs and styled components',
+		name: 'description',
+	},
+	{
 		content:
 			'Welcome to the portfolio of Nitin Sijwali. Find information about my projects, skills, and experiences. This portfolio has been created using Remix, Reactjs and styled components',
 		name: 'description',
