@@ -96,10 +96,6 @@ const Chrome = styled.div`
 		left: 0%;
 		right: 0%;
 	}
-	.hover-project-img {
-		box-shadow: 0 40px 50px 10px rgba(0, 0, 0, 0.25);
-		border: 1px solid rgba(242, 242, 242, 0.3);
-	}
 	.project:hover {
 		opacity: 1;
 		background-image: radial-gradient(
@@ -185,4 +181,43 @@ const CommonWrapper = styled(motion.div)<any>`
 	}
 `;
 
-export { Chrome, Dot, StyledHeader, StyledFooter, CommonWrapper };
+const PageWrapper = styled(motion.div)<any>`
+	.project-title {
+		background-image: linear-gradient(to bottom, #f2f2f2 50%, transparent);
+		letter-spacing: -1px;
+		text-shadow: 0 5px 15px rgba(0, 87, 255, 0.2),
+			0 -5px 15px rgba(255, 90, 0, 0.15), 0 -5px 25px rgba(255, 255, 255, 0.25);
+		-webkit-text-fill-color: transparent;
+	}
+	.role-responsibilities {
+		display: grid;
+		grid-column-gap: 48px;
+		grid-row-gap: 0px;
+		grid-template-rows: auto;
+		grid-template-columns: 1fr 1fr;
+		grid-auto-columns: 1fr;
+		justify-content: space-between;
+	}
+	@media (max-width: 640px) {
+		.role-responsibilities {
+			display: grid;
+			grid-column-gap: 0;
+			grid-row-gap: 48px;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+		}
+	}
+
+	/* Media query for extra-small screens (e.g., small smartphones) */
+	@media (max-width: 480px) {
+		.role-responsibilities {
+			display: grid;
+			grid-column-gap: 0;
+			grid-row-gap: 48px;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+		}
+	}
+`;
+
+export { Chrome, Dot, StyledHeader, StyledFooter, CommonWrapper, PageWrapper };

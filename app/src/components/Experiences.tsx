@@ -4,7 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { CommonWrapper } from './component.styles';
 import { Experience } from './type';
 
-const Experiences = ({ experience = [], resumeLink }: any) => {
+const Experiences = ({
+	experience = [],
+	resumeLink,
+}: {
+	experience: Array<Experience>;
+	resumeLink: string;
+}) => {
 	return (
 		<CommonWrapper
 			initial={{ opacity: 0 }}

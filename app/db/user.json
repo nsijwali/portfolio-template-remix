@@ -67,6 +67,9 @@
 	"honors_awards": ["Star Performer", "SPOT Award", "INSTA Award"],
 	"project": [
 		{
+			"id": "pvs",
+			"role": "IC frontend — User Flows, Rapid Prototyping, POCs",
+			"duration": "2019 - present",
 			"pName": "Product Variations",
 			"description": "Items that are same but have different options(eg: colors, size) are grouped for a single presentation and customer selects purchase option.",
 			"imageUrl": "/images/pvs.webp",
@@ -75,11 +78,13 @@
 				"Built Reusable React components with modular CSS, and state management on the client with Redux",
 				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse",
 				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences.",
-				"Guiding juniors and mentoring them to build the bug free, well written optimzed code",
 				"Proving use case of functionalities using Fullstory analytics tool."
 			]
 		},
 		{
+			"id": "collections-pcr",
+			"role": "IC frontend — User Flows, Rapid Prototyping, POCs",
+			"duration": "2019 - present",
 			"pName": "Collections and PCRs",
 			"description": "A lifestyle shopping experience where customers are presented similar items based on the theme and they can choose to buy them as set or specific item.",
 			"imageUrl": "/images/collections.webp",

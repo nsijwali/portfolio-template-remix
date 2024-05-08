@@ -13,6 +13,7 @@ export interface UserDetails {
 	honors_awards?: string[];
 	experience?: Experience[];
 	recommendations?: Recommendations[];
+	project?: Project[];
 }
 
 export interface Experience {
@@ -31,4 +32,12 @@ export interface Recommendations {
 	designation?: string;
 	praise?: string;
 	profile?: string;
+}
+
+export interface Project {
+	id: string;
+	pName: string;
+	description?: string;
+	imageUrl?: string;
+	responsibilities?: string[];
 }
