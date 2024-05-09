@@ -1,4 +1,5 @@
 import { useLoaderData, useRouteLoaderData } from '@remix-run/react';
+import { v4 as uuidv4 } from 'uuid';
 import React, { useMemo } from 'react';
 import { PageWrapper } from '~/src/components/component.styles';
 import { Project } from '~/src/components/type';
@@ -32,23 +33,39 @@ const DetailedView = () => {
 					{projectState?.duration}
 				</div>
 			</div>
-			<div className='role-responsibilities w-auto p-16'>
+			<div className='role-responsibilities w-auto py-16'>
 				<div className=''>
-					<span className='flex items-center gap-2'>
+					<span className='flex items-center gap-2 pb-4'>
 						<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
-						<span className='text-gray-400 text-xs'>Role</span>
+						<span className='text-xs font-semibold'>Role</span>
 					</span>
-					{projectState?.description}
+					<div className='text-gray-400 '>{projectState?.role}</div>
 				</div>
 				<div className=''>
-					<span className='flex items-center gap-2'>
+					<span className='flex items-center gap-2 pb-4'>
 						<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
-						<span className='text-gray-400 text-xs'>Responsibility</span>
+						<span className='text-xs font-semibold'>Overview</span>
 					</span>
+					<span className='flex flex-col gap-4 text-gray-400 '>
+						{projectState?.overview?.split('.')?.map((el: string) => (
+							<div key={uuidv4()}>{el}</div>
+						))}
+					</span>
+				</div>
+			</div>
+			<div className='w-full border-t border-gray-700 mb-4' />
+			<div className='py-16'>
+				<span className='flex items-center gap-2 pb-4'>
+					<div className='rounded-full w-2 h-2 bg-white shadow-white dot' />
+					<span className='text-xs font-semibold'>Responsibilities</span>
+				</span>
+				<span className='flex flex-col gap-4 text-gray-400'>
 					{projectState?.responsibilities?.map((el: string) => (
-						<li>{el}</li>
+						<li className='list-decimal' key={uuidv4()}>
+							{el}
+						</li>
 					))}
-				</div>
+				</span>
 			</div>
 		</PageWrapper>
 	);
