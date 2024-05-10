@@ -88,7 +88,7 @@
 			"duration": "2019 - present",
 			"pName": "Collections and PCRs",
 			"description": "A lifestyle shopping experience where customers are presented similar items based on the theme and they can choose to buy them as set or specific item.",
-			"overview": "Created an RBAC Micro Frontend web interface that allowed Vendors, Brand Advocates, and operation users to create and maintain Product Variation Groups via a single or bulk upload.They could add/change the category attributes and display settings. The upload image functionality reduced the likelihood of forming a problematic group.Until present, over millions of objects have been used to establish groups using UI.",
+			"overview": "Developed an RBAC Micro Frontend web app that used a single creation and bulk upload method to enable Brand Advocates and operations users to set up Fixed collections (PCR) and Collection groups. The group might be kept in the Draft form, and the user could decide later. Added the ability to create composite images, which would be shown as a group image and produce a group creation of greater quality.",
 			"imageUrl": "/images/collections.webp",
 			"about": "",
 			"responsibilities": [
