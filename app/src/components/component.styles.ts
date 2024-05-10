@@ -1,6 +1,19 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
+const styleBackgroundImage: any = `radial-gradient(
+				circle at 50% 0,
+				rgba(127, 207, 255, 0.2),
+				rgba(0, 0, 0, 0) 80%
+			),
+			radial-gradient(circle at 50% 0, #035, rgba(0, 0, 0, 0))`;
+const popoverBodyStyle = `grid-row-gap: 4px;
+			-webkit-backdrop-filter: blur(20px);
+			backdrop-filter: blur(20px);
+			background-color: rgba(242, 242, 242, 0.05);
+			border: 1px solid rgba(242, 242, 242, 0.1);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);`;
+
 const Chrome = styled.div`
 	-webkit-backdrop-filter: none;
 	backdrop-filter: none;
@@ -97,13 +110,7 @@ const Chrome = styled.div`
 		right: 0%;
 	}
 	.project:hover {
-		opacity: 1;
-		background-image: radial-gradient(
-				circle at 50% 0,
-				rgba(127, 207, 255, 0.2),
-				rgba(0, 0, 0, 0) 80%
-			),
-			radial-gradient(circle at 50% 0, #035, rgba(0, 0, 0, 0));
+		background-image: ${styleBackgroundImage};
 	}
 `;
 
@@ -156,12 +163,7 @@ const StyledHeader = styled.div`
 		width: 48px;
 		height: 48px;
 		.popover-body {
-			grid-row-gap: 4px;
-			-webkit-backdrop-filter: blur(20px);
-			backdrop-filter: blur(20px);
-			background-color: rgba(242, 242, 242, 0.05);
-			border: 1px solid rgba(242, 242, 242, 0.1);
-			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+			${popoverBodyStyle}
 		}
 	}
 `;
@@ -220,4 +222,17 @@ const PageWrapper = styled(motion.div)<any>`
 	}
 `;
 
-export { Chrome, Dot, StyledHeader, StyledFooter, CommonWrapper, PageWrapper };
+const BodyWrapper = styled(motion.div)<any>`
+	.back-button {
+		${popoverBodyStyle}
+	}
+`;
+export {
+	Chrome,
+	Dot,
+	StyledHeader,
+	StyledFooter,
+	CommonWrapper,
+	PageWrapper,
+	BodyWrapper,
+};

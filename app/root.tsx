@@ -6,6 +6,7 @@ import {
 	Scripts,
 	ScrollRestoration,
 	useRouteError,
+	useRouteLoaderData,
 } from '@remix-run/react';
 import { gsap } from 'gsap';
 import React, { useEffect, useState } from 'react';
@@ -18,6 +19,7 @@ import Header from './src/components/Header';
 import { Footer } from './src/components/Footer';
 import Cursor from './src/components/Cursor';
 import { isMobileDevice } from './utils/utils';
+import { BodyWrapper } from './src/components/component.styles';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
@@ -59,17 +61,19 @@ export default function App() {
 	return <Outlet />;
 }
 
-export const loader = async () => {
+export const loader = async ({ params }: any) => {
 	return {
 		status: 200,
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		data: userInfo,
+		name: params.name,
 	};
 };
 
 export function Layout({ children }: { children: React.ReactNode }) {
+	const name = useRouteLoaderData('routes/project.$name');
 	const [state, setState] = useState({ x: 0, y: 0 });
 	const [isMobile, setIsMobile] = useState(true);
 
@@ -124,8 +128,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				}}
 			>
 				<Cursor x={state.x} y={state.y} isMobile={isMobile} />
-				<Header />
-				<div
+				{(!name || name === 'info') && <Header />}
+				<BodyWrapper
 					className='px-2 pt-32 sm:pt-40 sm:pb-40 relative flex min-h-screen flex-col justify-center items-center gap-8 overflow-hidden'
 					style={{
 						backgroundImage:
@@ -135,7 +139,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					{children}
 					<Analytics />
 					<SpeedInsights />
-				</div>
+				</BodyWrapper>
 				<Footer />
 				<ScrollRestoration />
 				<Scripts />

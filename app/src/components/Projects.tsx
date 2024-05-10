@@ -25,7 +25,7 @@ const Projects = ({ project }: { project: Array<Project> }) => {
 			className='w-full sm:w-8/12 max-w-screen-2xl relative overflow-hidden rounded-3xl p-1 sm:p-2 xs:p-2 h-auto'
 			onClick={() => handleRoute(id)}
 		>
-			<div className='window-main project p-6 rounded-2xl overflow-hidden h-full relative flex flex-col gap-3 cursor-pointer  pb-0'>
+			<div className='window-main project p-6 rounded-2xl overflow-hidden h-full relative flex flex-col gap-3 cursor-pointer pb-0'>
 				<div className='flex justify-between'>
 					<div className='font-semibold text-base sm:text-xl'>{pName}</div>
 					<BsArrowRight className='' size={size} />
