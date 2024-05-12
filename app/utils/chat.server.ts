@@ -1,3 +1,4 @@
+'use client';
 import {
 	Message as VercelChatMessage,
 	StreamingTextResponse,
@@ -13,7 +14,7 @@ import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
 import Response from '@remix-run/node';
 
-const loaderUser = new JSONLoader('app/db/user.json');
+const loaderUser = new JSONLoader('app/utils/user.json');
 
 export const dynamic = 'force-dynamic';
 // export const runtime = 'edge';

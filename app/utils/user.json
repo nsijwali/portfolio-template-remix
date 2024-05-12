@@ -1,0 +1,193 @@
+{
+	"name": "Nitin Sijwali",
+	"nativeName": "नितिन सिज्वाली",
+	"designation": "Senior Software Engineer",
+	"role": "Frontend Developer",
+	"currentOrg": "Lowe's India",
+	"email": "sijwalinitin@gmail.com",
+	"location": "Bengaluru, Karnataka, India",
+	"area": "Bengaluru, KA",
+	"tagline": "Software Developer who cares deeply about good taste and User-Centric Design.",
+	"gitHubLink": "https://github.com/nsijwali",
+	"linkedInLink": "https://www.linkedin.com/in/nitinsij/",
+	"resumeLink": "https://drive.google.com/file/d/1SzeLFnIohGL6-HgpcguDW9zigvKuFgT6/view",
+	"images": [
+		"/images/heroLogo.webp",
+		"/images/logo-2.jpeg",
+		"/images/logo-3.jpeg"
+	],
+	"recommendationUrl": "https://www.linkedin.com/in/nitinsij/details/recommendations/?detailScreenTabIndex=0",
+	"skills": [
+		{
+			"name": "JavaScript",
+			"url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+		},
+		{
+			"name": "TypeScript",
+			"url": "https://www.typescriptlang.org/"
+		},
+		{
+			"name": "ReactJS",
+			"url": "https://react.dev/"
+		},
+		{
+			"name": "Redux",
+			"url": "https://redux.js.org/"
+		},
+		{
+			"name": "jQuery",
+			"url": "https://jquery.com/"
+		},
+		{
+			"name": "Angular",
+			"url": "https://angular.io/"
+		},
+		{
+			"name": "Remix",
+			"url": "https://remix.run/"
+		},
+		{
+			"name": "Fullstory",
+			"url": "https://www.fullstory.com/"
+		},
+		{
+			"name": "Webpack",
+			"url": "https://webpack.js.org/"
+		},
+		{
+			"name": "HTML",
+			"url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+		},
+		{
+			"name": "CSS",
+			"url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+		}
+	],
+	"summary": "Experienced Frontend Developer proficient in React.js, Angular, JavaScript & TypeScript. Skilled in leading teams & crafting user-friendly interfaces.",
+	"honors_awards": ["Star Performer", "SPOT Award", "INSTA Award"],
+	"project": [
+		{
+			"id": "pvs",
+			"role": "IC frontend — User Flows, Rapid Prototyping, POCs",
+			"duration": "2019 - present",
+			"pName": "Product Variations",
+			"description": "Items that are same but have different options(eg: colors, size) are grouped for a single presentation and customer selects purchase option.",
+			"imageUrl": "/images/pvs.webp",
+			"overview": "Created a RBAC Micro Frontend web app which led Vendors, Brand Advocates and operation users create Product Variation Groups via single create or Bulk upload and maintain them.They could add/maintain the category attributes and their display settings. The upload images functionality reduced the chances of creating a bad group.Till now over millions of items has been used to create group via UI.",
+			"responsibilities": [
+				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
+				"Built Reusable React components with modular CSS, and state management on the client with Redux",
+				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse",
+				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences.",
+				"Proving use case of functionalities using Fullstory analytics tool."
+			]
+		},
+		{
+			"id": "collections-pcr",
+			"role": "IC frontend — User Flows, Rapid Prototyping, POCs",
+			"duration": "2019 - present",
+			"pName": "Collections and PCRs",
+			"description": "A lifestyle shopping experience where customers are presented similar items based on the theme and they can choose to buy them as set or specific item.",
+			"overview": "Developed an RBAC Micro Frontend web app that used a single creation and bulk upload method to enable Brand Advocates and operations users to set up Fixed collections (PCR) and Collection groups. The group might be kept in the Draft form, and the user could decide later. Added the ability to create composite images, which would be shown as a group image and produce a group creation of greater quality.",
+			"imageUrl": "/images/collections.webp",
+			"about": "",
+			"responsibilities": [
+				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
+				"Built Reusable React components with modular CSS, and state management on the client with Redux",
+				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse",
+				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences.",
+				"Guiding juniors and mentoring them to build the bug free, well written optimzed code",
+				"Proving use case of functionalities using Fullstory analytics tool."
+			]
+		}
+	],
+	"recommendations": [
+		{
+			"from": "Amy Merritt",
+			"designation": "Sr. Product @Lowe's",
+			"praise": "Nitin is a quite insightful and creative engineer. He has been instrumental in delivering major features that lead to business transformation. Nitin's development work is always high quality and is delivered in a timely way. Every day working with Nitin is a privilege.",
+			"profile": "https://www.linkedin.com/in/ajmerritt/"
+		},
+		{
+			"from": "Kunal Kaul",
+			"designation": "Lead @Lowe's",
+			"praise": "One of the best Senior Engineer, I've had the pleasure of working with on a team. Nitin is proactive, takes ownership while being a great team player too. He is great at mentoring juniors, guiding and challenging them to deliver their best. Nitin has a great ability to translate complex designs into seamless user experiences. He asks the right questions early, avoiding complexities which might creep in at later stages of development. In case of issues with the User Experience he always comes forward with solutions to choose from, which imo, is one of the signs of a good engineer. Wish him all the best and I know he will do great at whatever he puts his mind to!",
+			"profile": "https://www.linkedin.com/in/kaulkunal/"
+		},
+		{
+			"from": "Steven Silver",
+			"designation": "Associate @Lowe's",
+			"praise": "Nitin is an excellent mentor and teacher and has been integral in my career. he continues to deliver results while training and mentoring others.Showing expertise in React, Typescript, JavaScript, HTML, CSS. also managing ci/cd pipelines such as Jenkins, Docker, ArgoCD.",
+			"profile": "https://www.linkedin.com/in/steven-silver-a97266153/"
+		}
+	],
+	"experience": [
+		{
+			"company": "Lowe's India",
+			"position": "Senior Software Engineer(IC)",
+			"duration": "Jan 2021 - Present",
+			"location": "Bengaluru, Karnataka, India",
+			"skillsUsed": [
+				"JavaScript",
+				"TypeScript",
+				"ReactJS",
+				"Redux",
+				"Fullstory",
+				"Webpack",
+				"HTML",
+				"CSS",
+				"Web app",
+				"Mentoring",
+				"Code review"
+			],
+			"imageURL": "https://i.postimg.cc/cLc64M7Y/project-lowes.png"
+		},
+		{
+			"company": "Publicis Sapient",
+			"position": "Associate, Experienced Technology L2",
+			"duration": "Sep 2019 - Jan 2021",
+			"location": "Bengaluru, KA",
+			"responsibilities": [
+				"Created responsive UI designs with their internal framework and libraries built on top of reactjs.",
+				"Built Reusable React components with modular CSS, and state management on the client with Redux.",
+				"Measured and resolved performance bottlenecks with Chrome DevTools and Lighthouse.",
+				"Collaborated with product, design, and UX teams to create amazing and intuitive experiences."
+			],
+			"skillsUsed": [
+				"JavaScript",
+				"TypeScript",
+				"ReactJS",
+				"Redux",
+				"Context-api",
+				"Nginx",
+				"Webpack",
+				"HTML",
+				"CSS",
+				"Web app"
+			]
+		},
+		{
+			"company": "Infosys",
+			"position": "Senior Systems Engineer",
+			"duration": "Oct 2016 - Aug 2019",
+			"location": "Bengaluru, KA",
+			"responsibilities": [
+				"Designed user-friendly websites with Javascript, it's framework, and libraries.",
+				"Collaborated with the team to create projects at various stages of the project's lifecycle.",
+				"Reusable code and libraries were created for future use.",
+				"Bugs fixes and enhancements were implemented, which significantly improved web functionality and speed."
+			],
+			"skillsUsed": [
+				"JavaScript",
+				"TypeScript",
+				"ReactJS",
+				"Redux",
+				"Webpack",
+				"HTML",
+				"CSS",
+				"Angular",
+				"Web app"
+			]
+		}
+	]
+}
