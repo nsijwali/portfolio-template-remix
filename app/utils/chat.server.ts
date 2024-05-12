@@ -17,8 +17,8 @@ import data from '~/db/user.json';
 
 const loaderUser = new JSONLoader(new Blob([JSON.stringify(data)]));
 
-export const dynamic = 'force-dynamic';
-// export const runtime = 'edge';
+// export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 /**
  * Basic memory formatter that stringifies and passes
