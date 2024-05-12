@@ -77,7 +77,7 @@ export function ChatBot() {
 							className='flex w-full max-w-3xl mx-auto items-center'
 						>
 							<input
-								className='flex-1 h-10 px-4 bg-black border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-500 focus:border-indigo-500'
+								className='flex-1 h-10 px-4 bg-black border-gray-300 shadow-sm focus:outline-none focus:ring-gray-500 rounded-3xl'
 								placeholder='ask me about nitin'
 								type='text'
 								value={input}
