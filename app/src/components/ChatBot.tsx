@@ -37,7 +37,7 @@ export function ChatBot() {
 					className='bot-icon rounded-full p-1 sm:p-0 cursor-pointer'
 				/>
 			) : (
-				<main className='flex flex-col w-80 sm:w-96 rounded-xl'>
+				<main className='flex flex-col w-80 sm:w-96 h-80 sm:h-96 rounded-xl'>
 					<header className='p-4 w-full max-w-3xl mx-auto flex justify-between'>
 						<RiRobot2Line size={28} className='' />
 						<IoIosClose
@@ -46,7 +46,7 @@ export function ChatBot() {
 							className='cursor-pointer'
 						/>
 					</header>
-					<div className='w-full border-t border-gray-700 mb-4' />
+					<div className='w-full border-t border-gray-700' />
 					<section className='container px-0 pb-4 flex flex-col flex-grow gap-4 mx-auto max-w-3xl'>
 						<ul
 							ref={chatParent}

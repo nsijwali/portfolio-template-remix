@@ -238,14 +238,14 @@ const BodyWrapper = styled(motion.div)<any>`
 `;
 
 const BotWrapper = styled.div`
-
 	main {
-		min-height: 20rem;
-		max-height: 32rem;
 		${botStyle}
 		background-color: #222222;
-    background-image: radial-gradient(circle closest-corner at 50% 0, rgba(242, 242, 242, .15), rgba(0, 0, 0, 0));
-}
+		background-image: radial-gradient(
+			circle closest-corner at 50% 0,
+			rgba(242, 242, 242, 0.15),
+			rgba(0, 0, 0, 0)
+		);
 	}
 	.bot-icon {
 		${botStyle};
