@@ -2,8 +2,8 @@
 import { useChat } from 'ai/react';
 import React, { useRef, useEffect, useState } from 'react';
 import { RiRobot2Line } from 'react-icons/ri';
-import { BotWrapper } from './component.styles';
 import { IoIosClose } from 'react-icons/io';
+import { BotWrapper } from './component.styles';
 
 export function ChatBot() {
 	const [showChat, setShowChat] = useState(false);

@@ -13,8 +13,9 @@ import { RunnableSequence } from '@langchain/core/runnables';
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
 import Response from '@remix-run/node';
+import data from './user.json';
 
-const loaderUser = new JSONLoader('utils/user.json');
+const loaderUser = new JSONLoader(new Blob([JSON.stringify(data)]));
 
 export const dynamic = 'force-dynamic';
 // export const runtime = 'edge';
