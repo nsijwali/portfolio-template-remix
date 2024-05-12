@@ -13,10 +13,8 @@ import { RunnableSequence } from '@langchain/core/runnables';
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
 import Response from '@remix-run/node';
-import path from 'path';
+import data from '~/db/user.json';
 // import data from '~/db/user.json';
-let usersPath = path.join(process.cwd(), '/users.json');
-const loaderUser = new JSONLoader(usersPath);
 
 // export const dynamic = 'force-dynamic';
 export const runtime = 'edge';
@@ -39,6 +37,7 @@ user: {question}
 assistant:`;
 
 export async function getChatStream(req: Request) {
+	const loaderUser = new JSONLoader(new Blob([JSON.stringify(data)]));
 	try {
 		// Extract the `messages` from the body of the request
 		const { messages } = await req?.json();
