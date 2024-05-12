@@ -15,8 +15,8 @@ import Response from '@remix-run/node';
 import data from '~/db/user.json';
 // import data from '~/db/user.json';
 
-// export const dynamic = 'force-dynamic';
-export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
+// export const runtime = 'edge';
 
 /**
  * Basic memory formatter that stringifies and passes
