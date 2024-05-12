@@ -6,7 +6,7 @@ import { StyledFooter } from './component.styles';
 import { isMobileDevice } from '~/utils/utils';
 
 export const Footer = () => {
-	const { data } = useLoaderData() || [];
+	const { data } = useLoaderData() || {};
 	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
@@ -17,7 +17,7 @@ export const Footer = () => {
 		() =>
 			isMobile
 				? `mailto:${data.email}`
-				: `https://mail.google.com/mail/?view=cm&fs=1&to=${data.email}`,
+				: `https://mail.google.com/mail/?view=cm&fs=1&to=${data?.email}`,
 		[isMobile],
 	);
 
@@ -89,7 +89,7 @@ export const Footer = () => {
 					</div>
 					<div className='flex justify-between items-center'>
 						<div className='text-sm font-medium'>
-							{`© ${year} ${data.name}. All Rights Reserved.`}
+							{`© ${year} ${data?.name}. All Rights Reserved.`}
 						</div>
 					</div>
 				</div>

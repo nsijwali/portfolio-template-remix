@@ -6,7 +6,7 @@ const LogoRenderer = () => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 	const handleClick = () => {
-		const nextIndex = (currentImageIndex + 1) % data.images.length;
+		const nextIndex = (currentImageIndex + 1) % data?.images?.length;
 		setCurrentImageIndex(nextIndex);
 	};
 	return (
@@ -16,7 +16,7 @@ const LogoRenderer = () => {
 			onClick={handleClick}
 		>
 			<img
-				src={data.images[currentImageIndex]}
+				src={data?.images[currentImageIndex]}
 				className='h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover backdrop-blur'
 				alt='logo'
 				loading='eager'

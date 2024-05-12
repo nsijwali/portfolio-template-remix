@@ -30,11 +30,13 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
+		"@langchain/openai": "^0.0.28",
 		"@remix-run/express": "^2.8.1",
 		"@remix-run/node": "^2.8.1",
 		"@remix-run/react": "^2.8.1",
 		"@vercel/analytics": "^1.2.2",
 		"@vercel/speed-insights": "^1.0.10",
+		"ai": "^3.1.5",
 		"axios": "^1.6.8",
 		"compression": "^1.7.4",
 		"dotenv": "^16.4.5",
@@ -44,7 +46,9 @@
 		"iconify-icon": "^2.0.0",
 		"isbot": "^4.1.0",
 		"keen-slider": "^6.8.6",
+		"langchain": "0.1.36",
 		"morgan": "^1.10.0",
+		"openai": "4.37.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-icons": "^5.0.1",

@@ -1,4 +1,4 @@
-import { Link, useNavigate, useLoaderData } from '@remix-run/react';
+import { Link, useNavigate, useRouteLoaderData } from '@remix-run/react';
 import React, { useEffect, useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import LogoRenderer from './LogoRenderer';
@@ -9,7 +9,7 @@ import { isMobileDevice } from '~/utils/utils';
 
 const Header = () => {
 	const navigate = useNavigate();
-	const { data } = useLoaderData() || [];
+	const { data } = useRouteLoaderData('root') || {};
 	const [isMobile, setIsMobile] = useState(false);
 
 	useEffect(() => {
@@ -26,7 +26,7 @@ const Header = () => {
 			<div className='flex gap-1 items-center' onClick={handleRoute}>
 				<LogoRenderer />
 				<div className='hidden sm:flex flex-col left-28 absolute cursor-pointer'>
-					<p className='text-xl font-medium'>{data.name || ''}</p>
+					<p className='text-xl font-medium'>{data?.name || ''}</p>
 					<span className='text-xs text-gray-400'>{data?.designation}</span>
 				</div>
 			</div>
@@ -37,7 +37,7 @@ const Header = () => {
 						<Link
 							target='_blank'
 							className='hover:text-yellow-300 backdrop-blur'
-							to={data.gitHubLink}
+							to={data?.gitHubLink}
 							aria-label='Git'
 						>
 							<FaGithub size='28' />
@@ -45,7 +45,7 @@ const Header = () => {
 						<Link
 							target='_blank'
 							className='hover:text-yellow-300 backdrop-blur'
-							to={data.linkedInLink}
+							to={data?.linkedInLink}
 							aria-label='linkedin'
 						>
 							<FaLinkedin size='28' />

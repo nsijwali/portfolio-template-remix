@@ -23,7 +23,7 @@ const DetailedView = () => {
 	return (
 		<>
 			<Link
-				className='absolute left-5 top-5 sm:left-10 sm:top-10 flex items-center w-24 justify-between border border-transparent hover:border-gray-300 transition-colors duration-300 py-2 px-4 rounded-full backdrop-blur back-button transition-all duration-700 delay-150 hover:pl-1'
+				className='fixed z-10 left-5 top-5 sm:left-10 sm:top-10 flex items-center w-24 justify-between border border-transparent hover:border-gray-300 transition-colors duration-300 py-2 px-4 back-button rounded-full backdrop-blur transition-all duration-700 delay-150 hover:pl-1'
 				to='/'
 				aria-label='home'
 			>

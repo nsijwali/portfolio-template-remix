@@ -20,6 +20,7 @@ import { Footer } from './src/components/Footer';
 import Cursor from './src/components/Cursor';
 import { isMobileDevice } from './utils/utils';
 import { BodyWrapper } from './src/components/component.styles';
+import { ChatBot } from './src/components/ChatBot';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
@@ -139,6 +140,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					{children}
 					<Analytics />
 					<SpeedInsights />
+					<ChatBot />
 				</BodyWrapper>
 				<Footer />
 				<ScrollRestoration />
