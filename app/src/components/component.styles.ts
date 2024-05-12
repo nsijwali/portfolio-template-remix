@@ -14,7 +14,8 @@ const popoverBodyStyle = `grid-row-gap: 4px;
 			border: 1px solid rgba(242, 242, 242, 0.1);
 			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);`;
 
-const botStyle = `backdrop-filter: blur(20px);
+const botStyle = `backdrop-filter: blur(15px);
+			-webkit-backdrop-filter: blur(15px);
 		background-color: rgba(242, 242, 242, 0.05);
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 		z-index: 2;
