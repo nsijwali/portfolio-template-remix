@@ -41,24 +41,6 @@ export function ChatBot() {
 						<h3 className='text-2xl font-bold'>Nitin Sijwali</h3>
 						<IoIosClose onClick={toggleChat} size={28} />
 					</header>
-					<section className='p-4'>
-						<form
-							onSubmit={handleSubmit}
-							className='flex w-full max-w-3xl mx-auto items-center'
-						>
-							<input
-								className='flex-1 min-h-[40px]'
-								placeholder='Type your question here...'
-								type='text'
-								value={input}
-								onChange={handleInputChange}
-							/>
-							<button className='ml-2' type='submit'>
-								Submit
-							</button>
-						</form>
-					</section>
-
 					<section className='container px-0 pb-10 flex flex-col flex-grow gap-4 mx-auto max-w-3xl'>
 						<ul
 							ref={chatParent}
@@ -82,6 +64,23 @@ export function ChatBot() {
 								</div>
 							))}
 						</ul>
+					</section>
+					<section className='p-4'>
+						<form
+							onSubmit={handleSubmit}
+							className='flex w-full max-w-3xl mx-auto items-center'
+						>
+							<input
+								className='flex-1 min-h-[40px]'
+								placeholder='Type your question here...'
+								type='text'
+								value={input}
+								onChange={handleInputChange}
+							/>
+							<button className='ml-2' type='submit'>
+								Submit
+							</button>
+						</form>
 					</section>
 				</main>
 			)}
