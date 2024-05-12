@@ -238,14 +238,23 @@ const BodyWrapper = styled(motion.div)<any>`
 `;
 
 const BotWrapper = styled.div`
+
 	main {
 		min-height: 20rem;
 		max-height: 32rem;
-		border: 1px solid rgba(242, 242, 242, 0.1);
 		${botStyle}
+		background-color: #222222;
+    background-image: radial-gradient(circle closest-corner at 50% 0, rgba(242, 242, 242, .15), rgba(0, 0, 0, 0));
+}
 	}
 	.bot-icon {
 		${botStyle};
+	}
+	.message-bg {
+		background-color: rgba(242, 242, 242, 0.05);
+		transition: box-shadow 1s cubic-bezier(0.23, 1, 0.32, 1),
+			border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 	}
 `;
 

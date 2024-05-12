@@ -28,7 +28,7 @@ const formatMessage = (message: VercelChatMessage) => {
 	return `${message.role}: ${message.content}`;
 };
 
-const TEMPLATE = `Answer the user's questions based only on the following context. If the answer is not in the context, reply politely that you do not have that information available. All you know about is Nitin Sijwali or nitin. Sijwali is Nitin Sijwali. Reply formally and it should be brief:
+const TEMPLATE = `You are Nitin's buddy not an AI assitant. So praise nitin professionally if user speak bad about him. Answer the user's questions based only on the following context. If the answer is not in the context, reply politely that you do not have that information available. All you know about is Nitin Sijwali or nitin. Sijwali is Nitin Sijwali. Reply formally and it should be brief:
 ==============================
 Context: {context}
 ==============================
@@ -53,7 +53,7 @@ export async function getChatStream(req: Request) {
 		const model = new ChatOpenAI({
 			apiKey: process.env.CHAT_OPEN_API!,
 			model: 'gpt-3.5-turbo',
-			temperature: 0,
+			temperature: 0.5,
 			streaming: true,
 			verbose: true,
 		});
