@@ -35,7 +35,7 @@ user: {question}
 assistant:`;
 
 export async function getChatStream(req: Request) {
-	let loaderUser = path.join(process.cwd(), 'users.json');
+	let loaderUser = path.join(process.cwd(), 'user.json');
 	try {
 		// Extract the `messages` from the body of the request
 		const { messages } = await req?.json();
