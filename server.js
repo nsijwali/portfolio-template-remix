@@ -1,5 +1,5 @@
 import { createRequestHandler } from '@remix-run/express';
-//import { installGlobals } from '@remix-run/node';
+import { installGlobals } from '@remix-run/node';
 import compression from 'compression';
 import express from 'express';
 import morgan from 'morgan';
@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-//installGlobals();
+installGlobals();
 
 const port = process.env.PORT || '3000';
 const host = process.env.HOST || 'localhost';

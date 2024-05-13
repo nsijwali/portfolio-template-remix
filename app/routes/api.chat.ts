@@ -12,7 +12,7 @@ import { RunnableSequence } from '@langchain/core/runnables';
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
 import Response from '@remix-run/node';
-import path from 'app/db/user.json';
+import path from 'path';
 
 export const dynamic = 'force-dynamic';
 // export const runtime = 'edge';
@@ -35,11 +35,7 @@ user: {question}
 assistant:`;
 
 export const action = async ({ request }: any) => {
-	// const blob = new new Blob([path], {
-	// 	type: 'application/json',
-	// })();
-
-	// const loaderUser = new JSONLoader(blob);
+	const loaderUser = new JSONLoader(path.resolve('app/db/user.json'));
 	try {
 		// Extract the `messages` from the body of the request
 		const { messages } = await request?.json();
@@ -47,8 +43,8 @@ export const action = async ({ request }: any) => {
 		const formattedPreviousMessages = messages.slice(0, -1).map(formatMessage);
 
 		const currentMessageContent = messages[messages.length - 1].content;
-		const textSplitter = new CharacterTextSplitter();
-		const docs = await textSplitter.createDocuments([JSON.stringify(path)]);
+		// const textSplitter = new CharacterTextSplitter();
+		const docs = await loaderUser.load();
 		// const docs = new Document({ pageContent: path.toString() });
 
 		const prompt = PromptTemplate.fromTemplate(TEMPLATE);
