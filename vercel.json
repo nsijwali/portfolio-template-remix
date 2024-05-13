@@ -1,6 +1,6 @@
 {
     "functions": {
-        "app/utils/chat.server.ts": {
+        "api/chat.server.ts": {
             "includeFiles": "user.json"
         }
     }
