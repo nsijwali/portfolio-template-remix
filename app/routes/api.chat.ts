@@ -35,7 +35,7 @@ user: {question}
 assistant:`;
 
 export const action = async ({ request }: any) => {
-	const loaderUser = new JSONLoader('user.json');
+	const loaderUser = new JSONLoader('public/user.json');
 	try {
 		// Extract the `messages` from the body of the request
 		const { messages } = await request?.json();
