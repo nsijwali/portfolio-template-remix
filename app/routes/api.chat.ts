@@ -66,7 +66,7 @@ export const action = async ({ request }: any) => {
 			{
 				question: (input) => input.question,
 				chat_history: (input) => input.chat_history,
-				context: () => path,
+				context: () => formatDocumentsAsString(path),
 			},
 			prompt,
 			model,
