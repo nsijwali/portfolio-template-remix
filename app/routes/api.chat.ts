@@ -35,7 +35,7 @@ user: {question}
 assistant:`;
 
 export const action = async ({ request }: any) => {
-	const loaderUser = new JSONLoader('app/db/user.json');
+	// const loaderUser = new JSONLoader('app/db/user.json');
 	try {
 		// Extract the `messages` from the body of the request
 		const { messages } = await request?.json();
@@ -44,7 +44,7 @@ export const action = async ({ request }: any) => {
 
 		const currentMessageContent = messages[messages.length - 1].content;
 
-		const docs = await loaderUser.load();
+		// const docs = await loaderUser.load();
 
 		const prompt = PromptTemplate.fromTemplate(TEMPLATE);
 
