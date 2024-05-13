@@ -6,7 +6,7 @@ import {
 import { ChatOpenAI } from '@langchain/openai';
 import { PromptTemplate } from '@langchain/core/prompts';
 import { HttpResponseOutputParser } from 'langchain/output_parsers';
-
+import { Document } from 'langchain/document';
 import { JSONLoader } from 'langchain/document_loaders/fs/json';
 import { RunnableSequence } from '@langchain/core/runnables';
 import { formatDocumentsAsString } from 'langchain/util/document';
@@ -35,7 +35,11 @@ user: {question}
 assistant:`;
 
 export const action = async ({ request }: any) => {
-	// const loaderUser = new JSONLoader('app/db/user.json');
+	// const blob = new new Blob([path], {
+	// 	type: 'application/json',
+	// })();
+
+	// const loaderUser = new JSONLoader(blob);
 	try {
 		// Extract the `messages` from the body of the request
 		const { messages } = await request?.json();
@@ -44,7 +48,7 @@ export const action = async ({ request }: any) => {
 
 		const currentMessageContent = messages[messages.length - 1].content;
 
-		// const docs = await loaderUser.load();
+		const docs = new Document({ pageContent: path.toString() });
 
 		const prompt = PromptTemplate.fromTemplate(TEMPLATE);
 
@@ -66,7 +70,7 @@ export const action = async ({ request }: any) => {
 			{
 				question: (input) => input.question,
 				chat_history: (input) => input.chat_history,
-				context: () => formatDocumentsAsString(path),
+				context: () => docs,
 			},
 			prompt,
 			model,
