@@ -12,7 +12,7 @@ import { RunnableSequence } from '@langchain/core/runnables';
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
 import Response from '@remix-run/node';
-// import path from 'path';
+import path from 'app/db/user.json';
 
 export const dynamic = 'force-dynamic';
 // export const runtime = 'edge';
@@ -35,7 +35,7 @@ user: {question}
 assistant:`;
 
 export const action = async ({ request }: any) => {
-	const loaderUser = new JSONLoader('user.json');
+	const loaderUser = new JSONLoader('app/db/user.json');
 	try {
 		// Extract the `messages` from the body of the request
 		const { messages } = await request?.json();
@@ -66,7 +66,7 @@ export const action = async ({ request }: any) => {
 			{
 				question: (input) => input.question,
 				chat_history: (input) => input.chat_history,
-				context: () => formatDocumentsAsString(docs),
+				context: () => path,
 			},
 			prompt,
 			model,
