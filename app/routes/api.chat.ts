@@ -47,8 +47,9 @@ export const action = async ({ request }: any) => {
 		const formattedPreviousMessages = messages.slice(0, -1).map(formatMessage);
 
 		const currentMessageContent = messages[messages.length - 1].content;
-
-		const docs = new Document({ pageContent: path.toString() });
+		const textSplitter = new CharacterTextSplitter();
+		const docs = await textSplitter.createDocuments([JSON.stringify(path)]);
+		// const docs = new Document({ pageContent: path.toString() });
 
 		const prompt = PromptTemplate.fromTemplate(TEMPLATE);
 
