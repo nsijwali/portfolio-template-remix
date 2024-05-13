@@ -39,7 +39,10 @@ export function ChatBot() {
 			) : (
 				<main className='flex flex-col w-80 sm:w-96 h-80 sm:h-96 rounded-xl'>
 					<header className='p-4 w-full max-w-3xl mx-auto flex justify-between'>
-						<RiRobot2Line size={28} className='' />
+						<span className='flex gap-2 items-center'>
+							<RiRobot2Line size={28} className='' />
+							<label className='text-sm font-black'>NitinAI</label>
+						</span>
 						<IoIosClose
 							onClick={toggleChat}
 							size={28}
@@ -77,7 +80,7 @@ export function ChatBot() {
 							className='flex w-full max-w-3xl mx-auto items-center'
 						>
 							<input
-								className='flex-1 h-10 px-4 bg-black border-gray-300 shadow-sm focus:outline-none focus:ring-gray-500 rounded-3xl'
+								className='flex-1 h-10 px-4 bg-black border-gray-300 shadow-sm focus:outline-none border rounded-3xl'
 								placeholder='ask me about nitin'
 								type='text'
 								value={input}
@@ -85,7 +88,7 @@ export function ChatBot() {
 							/>
 
 							<button className='ml-2' type='submit'>
-								<FiSend />
+								<FiSend size={28} />
 							</button>
 						</form>
 					</section>
