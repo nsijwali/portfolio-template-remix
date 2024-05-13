@@ -5,4 +5,7 @@ import { vercelPreset } from '@vercel/remix/vite';
 
 export default defineConfig({
 	plugins: [remix({ presets: [vercelPreset()] }), tsconfigPaths()],
+	experimental: {
+		nftTracing: true,
+	},
 });
