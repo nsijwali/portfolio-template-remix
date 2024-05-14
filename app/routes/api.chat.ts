@@ -79,7 +79,7 @@ export const action = async ({ request }: any) => {
 			chat_history: formattedPreviousMessages.join('\n'),
 			question: currentMessageContent,
 		});
-
+		console.log(stream.constructor.name); // Should log 'ReadableStream'
 		// Respond with the stream
 		return new StreamingTextResponse(
 			stream.pipeThrough(createStreamDataTransformer()),
