@@ -98,7 +98,7 @@ export const action = async ({ request }: any) => {
 				  });
 
 		// Log headers for debugging
-		console.log('Headers:', compatibleStream?.headers);
+		console.log('Headers:', compatibleStream);
 
 		// Respond with the stream using StreamingTextResponse
 		return new StreamingTextResponse(
