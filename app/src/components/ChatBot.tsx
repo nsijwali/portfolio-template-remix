@@ -18,9 +18,6 @@ export function ChatBot() {
 		onError: (e) => {
 			console.log(e);
 		},
-		headers: {
-			'Content-Type': 'text/plain; charset=utf-8',
-		},
 	});
 	const chatParent = useRef<HTMLUListElement>(null);
 
@@ -29,7 +26,7 @@ export function ChatBot() {
 		if (domNode) {
 			domNode.scrollTop = domNode.scrollHeight;
 		}
-	});
+	}, [messages]);
 
 	return (
 		<BotWrapper>
