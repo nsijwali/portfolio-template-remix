@@ -32,6 +32,8 @@ export const action = async ({ request }: any) => {
 	const loaderUser = new JSONLoader(path.resolve('app/db/user.json'));
 	try {
 		const { messages } = await request?.json();
+		console.log('Received messages:', messages);
+
 		const formattedPreviousMessages = messages.slice(0, -1).map(formatMessage);
 		const currentMessageContent = messages[messages.length - 1].content;
 		const docs = await loaderUser.load();
@@ -46,7 +48,7 @@ export const action = async ({ request }: any) => {
 		});
 
 		const parser = new HttpResponseOutputParser({
-			contentType: 'text/plain',
+			'Content-Type': 'text/plain',
 		});
 
 		const chain = RunnableSequence.from([
@@ -65,12 +67,34 @@ export const action = async ({ request }: any) => {
 			question: currentMessageContent,
 		});
 
+		const compatibleStream =
+			stream instanceof globalThis.ReadableStream
+				? stream
+				: new ReadableStream({
+						async start(controller) {
+							const reader = await stream.getReader();
+							function push() {
+								reader.read().then(({ done, value }: any) => {
+									if (done) {
+										controller.close();
+										return;
+									}
+									controller.enqueue(value);
+									push();
+								});
+							}
+							push();
+						},
+				  });
+
 		const headers = new WebFetchHeaders({
 			'Content-Type': 'text/plain; charset=utf-8',
 		});
 
+		console.log('Headers:', headers);
+
 		return new StreamingTextResponse(
-			stream.pipeThrough(createStreamDataTransformer()),
+			compatibleStream.pipeThrough(createStreamDataTransformer()),
 			{ headers },
 		);
 	} catch (e: any) {
