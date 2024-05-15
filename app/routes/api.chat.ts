@@ -31,7 +31,7 @@ assistant:`;
 export const action = async ({ request }: any) => {
 	const loaderUser = new JSONLoader(path.resolve('app/db/user.json'));
 	try {
-		const { messages } = await request?.json();
+		const { messages, header } = await request?.json();
 		console.log('Received messages:', messages);
 
 		const formattedPreviousMessages = messages.slice(0, -1).map(formatMessage);
@@ -92,8 +92,9 @@ export const action = async ({ request }: any) => {
 			raw: {
 				'Content-Type': 'text/plain; charset=utf-8',
 			},
+			...header,
 		};
-		console.log('Headers:', headers);
+		console.log('Headers:', header);
 
 		return new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
