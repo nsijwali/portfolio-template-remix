@@ -88,10 +88,10 @@ export const action = async ({ request }: any) => {
 						},
 				  });
 
-		const headers = new WebFetchHeaders({
+		const headers = {
 			'Content-Type': 'text/plain; charset=utf-8',
 			'Access-Control-Allow-Origin': '*',
-		});
+		};
 
 		return new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
