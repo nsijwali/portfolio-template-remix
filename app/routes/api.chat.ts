@@ -10,11 +10,10 @@ import { ChatOpenAI } from '@langchain/openai';
 import { PromptTemplate } from '@langchain/core/prompts';
 import { HttpResponseOutputParser } from 'langchain/output_parsers';
 import { RunnableSequence } from '@langchain/core/runnables';
-import { fetch as webFetch, ReadableStream } from '@remix-run/web-fetch';
+import { ReadableStream as RemixReadableStream } from '@remix-run/web-fetch';
 import { json as remixJson } from '@remix-run/node';
 
 export const dynamic = 'force-dynamic';
-// export const runtime = 'edge';
 
 /**
  * Basic memory formatter that stringifies and passes
@@ -79,9 +78,9 @@ export const action = async ({ request }: any) => {
 
 		// Ensure the stream is compatible using ReadableStream from @remix-run/web-fetch
 		const compatibleStream =
-			stream instanceof ReadableStream
+			stream instanceof RemixReadableStream
 				? stream
-				: new ReadableStream({
+				: new RemixReadableStream({
 						start(controller) {
 							const reader = stream.getReader();
 							function push() {
@@ -98,11 +97,15 @@ export const action = async ({ request }: any) => {
 						},
 				  });
 
-		// Respond with the stream
+		// Log headers for debugging
+		console.log('Headers:', compatibleStream?.headers);
+
+		// Respond with the stream using StreamingTextResponse
 		return new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
 		);
 	} catch (e: any) {
+		console.error('Error:', e);
 		return remixJson({ error: e.message }, { status: e.status ?? 500 });
 	}
 };
