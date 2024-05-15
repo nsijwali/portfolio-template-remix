@@ -13,7 +13,7 @@ import { RunnableSequence } from '@langchain/core/runnables';
 import { Headers as WebFetchHeaders } from '@remix-run/web-fetch';
 import { json as remixJson, createHeaders } from '@remix-run/node';
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'edge';
 
 /**
  * Basic memory formatter that stringifies and passes
@@ -103,7 +103,7 @@ export const action = async ({ request }: any) => {
 		});
 
 		// Respond with the stream using StreamingTextResponse
-		return await new StreamingTextResponse(
+		return new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
 			{ headers },
 		);
