@@ -87,10 +87,9 @@ export const action = async ({ request }: any) => {
 						},
 				  });
 
-		const headers = new WebFetchHeaders({
+		const headers = {
 			'Content-Type': 'text/plain; charset=utf-8',
-		});
-
+		};
 		console.log('Headers:', headers);
 
 		return new StreamingTextResponse(
