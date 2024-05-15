@@ -103,7 +103,7 @@ export const action = async ({ request }: any) => {
 		});
 
 		// Respond with the stream using StreamingTextResponse
-		return new StreamingTextResponse(
+		return await new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
 			{ headers },
 		);
