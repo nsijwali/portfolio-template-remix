@@ -46,7 +46,7 @@ export const action = async ({ request }: any) => {
 		});
 
 		const parser = new HttpResponseOutputParser({
-			contentType: 'text/event-stream',
+			contentType: 'text/plain',
 		});
 
 		const chain = RunnableSequence.from([
