@@ -7,20 +7,20 @@
   resolved "https://registry.npmjs.org/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz"
   integrity sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==
 
-"@ai-sdk/provider-utils@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.6.tgz#aa9268abe3a0912d6522b0dd38b54bd0f2c601d3"
-  integrity sha512-SxOZgSxnaVlW04/SjfMoAD45kWOWTWx0QcZrHaQnePooLhyk5AqQpgauPijL803uoJPCKfzd0UBv1gSKvWiU0A==
+"@ai-sdk/provider-utils@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/provider-utils/-/provider-utils-0.0.1.tgz#66aa4d6acb2a9604f205c2e21f0cba683d02b7dd"
+  integrity sha512-DpD58qFYHoPffBcODPL5od/zAsFSLymwEdtP/QqNX8qE3oQcRG9GYHbj1fZTH5b9i7COwlnJ4wYzYSkXVyd3bA==
   dependencies:
-    "@ai-sdk/provider" "0.0.3"
+    "@ai-sdk/provider" "0.0.0"
     eventsource-parser "1.1.2"
     nanoid "3.3.6"
     secure-json-parse "2.7.0"
 
-"@ai-sdk/provider@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@ai-sdk/provider/-/provider-0.0.3.tgz#3b0cce48cfe183d306d6b085583a77c464d42491"
-  integrity sha512-0B8P6VZpJ6F9yS9BpmJBYSqIaIfeRtL5tD5SP+qgR8y0pPwalIbRMUFiLz9YUT6g70MJsCLpm/2/fX3cfAYCJw==
+"@ai-sdk/provider@0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/provider/-/provider-0.0.0.tgz#93bc85d261e821af3e8989ea5ba3b5326b8b2974"
+  integrity sha512-Gbl9Ei8NPtM85gB/o8cY7s7CLGxK/U6QVheVaI3viFn7o6IpTfy1Ja389e2FXVMNJ4WHK2qYWSp5fAFDuKulTA==
   dependencies:
     json-schema "0.4.0"
 
@@ -1582,13 +1582,13 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-ai@^3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/ai/-/ai-3.1.5.tgz#bc758079dbbf5e5eb7a10de48009d73786ebd836"
-  integrity sha512-uE8EfcigIoep4NCqIOWsNUP/alyZ93XtsDsLjiop51y4lEtgJg0GzpbBRfYKaEK1O74HiQ2CmaeOOBlNVBBiIQ==
+ai@3.0.23:
+  version "3.0.23"
+  resolved "https://registry.yarnpkg.com/ai/-/ai-3.0.23.tgz#13f63e806f840a9876ed44ccfc9f307f816344d9"
+  integrity sha512-VL8Fx9euEtffzIu0BpLDZkACB+oU6zj4vHXSsSoT5VfwAzE009FJedOMPK1M4u60RpYw/DgwlD7OLN7XQfvSHw==
   dependencies:
-    "@ai-sdk/provider" "0.0.3"
-    "@ai-sdk/provider-utils" "0.0.6"
+    "@ai-sdk/provider" "0.0.0"
+    "@ai-sdk/provider-utils" "0.0.1"
     eventsource-parser "1.1.2"
     json-schema "0.4.0"
     jsondiffpatch "0.6.0"
@@ -4194,10 +4194,10 @@ kleur@^4.0.3:
   resolved "https://registry.npmjs.org/kleur/-/kleur-4.1.5.tgz"
   integrity sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==
 
-langchain@^0.1.37:
-  version "0.1.37"
-  resolved "https://registry.yarnpkg.com/langchain/-/langchain-0.1.37.tgz#15db8ca5c24afc39e61773cab69e216dfb38e1bb"
-  integrity sha512-rpaLEJtRrLYhAViEp7/aHfSkxbgSqHJ5n10tXv3o4kHP/wOin85RpTgewwvGjEaKc3797jOg+sLSk6a7e0UlMg==
+langchain@0.1.36:
+  version "0.1.36"
+  resolved "https://registry.yarnpkg.com/langchain/-/langchain-0.1.36.tgz#2f201f681d83fb265716e28e7dfcfe61fbeef2c2"
+  integrity sha512-NTbnCL/jKWIeEI//Nm1oG8nhW3vkYWvEMr1MPotmTThTfeKfO87eV/OAzAyh6Ruy6GFs/qofRgQZGIe6XvXTNQ==
   dependencies:
     "@anthropic-ai/sdk" "^0.9.1"
     "@langchain/community" "~0.0.47"
