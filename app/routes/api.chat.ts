@@ -39,13 +39,16 @@ export const action = async ({ request }: any) => {
 		const docs = await loaderUser.load();
 		const prompt = PromptTemplate.fromTemplate(TEMPLATE);
 
-		const model = new ChatOpenAI({
-			apiKey: process.env.CHAT_OPEN_API!,
-			model: 'gpt-3.5-turbo',
-			temperature: 0.5,
-			streaming: true,
-			verbose: true,
-		});
+		const model = new ChatOpenAI(
+			{
+				apiKey: process.env.CHAT_OPEN_API!,
+				model: 'gpt-3.5-turbo',
+				temperature: 0.5,
+				streaming: true,
+				verbose: true,
+			},
+			{ responseType: 'stream' },
+		);
 
 		const parser = new HttpResponseOutputParser();
 
@@ -89,10 +92,6 @@ export const action = async ({ request }: any) => {
 
 		const headers = {
 			'Content-Type': 'text/plain; charset=utf-8',
-			raw: {
-				'Content-Type': 'text/plain; charset=utf-8',
-			},
-			...header,
 		};
 		console.log('Headers:', header);
 
