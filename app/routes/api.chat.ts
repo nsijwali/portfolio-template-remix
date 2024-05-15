@@ -99,7 +99,7 @@ export const action = async ({ request }: any) => {
 				  });
 
 		// Create headers
-		const headers = new WebFetchHeaders({
+		const headers = new createHeaders({
 			'Content-Type': 'text/plain; charset=utf-8',
 		});
 
