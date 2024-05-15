@@ -10,8 +10,8 @@ import { ChatOpenAI } from '@langchain/openai';
 import { PromptTemplate } from '@langchain/core/prompts';
 import { HttpResponseOutputParser } from 'langchain/output_parsers';
 import { RunnableSequence } from '@langchain/core/runnables';
-import { ReadableStream as RemixReadableStream } from '@remix-run/web-fetch';
-import { json as remixJson } from '@remix-run/node';
+import { Headers as WebFetchHeaders } from '@remix-run/web-fetch';
+import { json as remixJson, createHeaders } from '@remix-run/node';
 
 export const dynamic = 'force-dynamic';
 
@@ -76,11 +76,11 @@ export const action = async ({ request }: any) => {
 
 		console.log(stream.constructor.name); // Should log 'ReadableStream'
 
-		// Ensure the stream is compatible using ReadableStream from @remix-run/web-fetch
+		// Ensure the stream is compatible
 		const compatibleStream =
-			stream instanceof RemixReadableStream
+			stream instanceof globalThis.ReadableStream
 				? stream
-				: new RemixReadableStream({
+				: new ReadableStream({
 						start(controller) {
 							const reader = stream.getReader();
 							function push() {
@@ -97,12 +97,15 @@ export const action = async ({ request }: any) => {
 						},
 				  });
 
-		// Log headers for debugging
-		console.log('Headers:', compatibleStream);
+		// Create headers
+		const headers = new WebFetchHeaders({
+			'Content-Type': 'text/plain; charset=utf-8',
+		});
 
 		// Respond with the stream using StreamingTextResponse
 		return new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
+			{ headers },
 		);
 	} catch (e: any) {
 		console.error('Error:', e);
