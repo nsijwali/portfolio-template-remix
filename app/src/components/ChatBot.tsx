@@ -26,7 +26,7 @@ export function ChatBot() {
 		if (domNode) {
 			domNode.scrollTop = domNode.scrollHeight;
 		}
-	}, [messages]);
+	});
 
 	return (
 		<BotWrapper>
