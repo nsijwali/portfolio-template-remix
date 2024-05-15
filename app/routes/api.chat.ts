@@ -6,7 +6,7 @@ import {
 import { ChatOpenAI } from '@langchain/openai';
 import { PromptTemplate } from '@langchain/core/prompts';
 import { HttpResponseOutputParser } from 'langchain/output_parsers';
-import { Document } from 'langchain/document';
+import { fetch as webFetch, ReadableStream } from '@remix-run/web-fetch';
 import { JSONLoader } from 'langchain/document_loaders/fs/json';
 import { RunnableSequence } from '@langchain/core/runnables';
 import { formatDocumentsAsString } from 'langchain/util/document';
@@ -81,8 +81,29 @@ export const action = async ({ request }: any) => {
 		});
 		console.log(stream.constructor.name); // Should log 'ReadableStream'
 		// Respond with the stream
+
+		const compatibleStream =
+			stream instanceof ReadableStream
+				? stream
+				: new ReadableStream({
+						start(controller) {
+							const reader = stream.getReader();
+							function push() {
+								reader.read().then(({ done, value }) => {
+									if (done) {
+										controller.close();
+										return;
+									}
+									controller.enqueue(value);
+									push();
+								});
+							}
+							push();
+						},
+				  });
+
 		return new StreamingTextResponse(
-			stream.pipeThrough(createStreamDataTransformer()),
+			compatibleStream.pipeThrough(createStreamDataTransformer()),
 		);
 	} catch (e: any) {
 		return Response.json({ error: e.message }, { status: e.status ?? 500 });
