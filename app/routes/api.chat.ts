@@ -13,7 +13,7 @@ import { RunnableSequence } from '@langchain/core/runnables';
 import { Headers as WebFetchHeaders } from '@remix-run/web-fetch';
 import { json as remixJson, createHeaders } from '@remix-run/node';
 
-export const dynamic = 'edge';
+export const dynamic = 'force-dynamic';
 
 /**
  * Basic memory formatter that stringifies and passes
@@ -23,7 +23,7 @@ const formatMessage = (message: VercelChatMessage) => {
 	return `${message.role}: ${message.content}`;
 };
 
-const TEMPLATE = `You are Nitin's buddy NitinAI, not an AI assistant. So praise nitin professionally if user speak bad about him. Answer the user's questions based only on the following context. If the answer is not in the context, reply politely that you do not have that information available. All you know about is Nitin Sijwali or nitin. Sijwali is Nitin Sijwali. Reply formally and it should be brief:
+const TEMPLATE = `You are Nitin's buddy NitinAI, not an AI assistant. So praise Nitin professionally if user speak bad about him. Answer the user's questions based only on the following context. If the answer is not in the context, reply politely that you do not have that information available. All you know about is Nitin Sijwali or Nitin. Sijwali is Nitin Sijwali. Reply formally and it should be brief:
 ==============================
 Context: {context}
 ==============================
@@ -37,6 +37,7 @@ export const action = async ({ request }: any) => {
 	try {
 		// Extract the `messages` from the body of the request
 		const { messages } = await request?.json();
+		console.log('Received messages:', messages);
 
 		const formattedPreviousMessages = messages.slice(0, -1).map(formatMessage);
 		const currentMessageContent = messages[messages.length - 1].content;
@@ -57,7 +58,7 @@ export const action = async ({ request }: any) => {
 		 */
 		const parser = new HttpResponseOutputParser();
 
-		const chain: any = RunnableSequence.from([
+		const chain = RunnableSequence.from([
 			{
 				question: (input) => input.question,
 				chat_history: (input) => input.chat_history,
@@ -76,7 +77,7 @@ export const action = async ({ request }: any) => {
 
 		console.log(stream.constructor.name); // Should log 'ReadableStream'
 
-		// Ensure the stream is compatible
+		// Ensure the stream is compatible using ReadableStream from globalThis (Node.js or browser)
 		const compatibleStream =
 			stream instanceof globalThis.ReadableStream
 				? stream
@@ -102,13 +103,16 @@ export const action = async ({ request }: any) => {
 			'Content-Type': 'text/plain; charset=utf-8',
 		});
 
+		// Log headers for debugging
+		console.log('Headers:', headers);
+
 		// Respond with the stream using StreamingTextResponse
 		return new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
 			{ headers },
 		);
 	} catch (e: any) {
-		console.error('Error:', e);
+		console.error('Error:', e.message, e.stack);
 		return remixJson({ error: e.message }, { status: e.status ?? 500 });
 	}
 };
