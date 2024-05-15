@@ -49,7 +49,7 @@ export const action = async ({ request }: any) => {
 			apiKey: process.env.CHAT_OPEN_API!,
 			model: 'gpt-3.5-turbo',
 			temperature: 0.5,
-			streaming: true,
+			// streaming: true,
 			verbose: true,
 		});
 
