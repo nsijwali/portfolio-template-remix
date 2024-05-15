@@ -42,15 +42,11 @@ export const action = async ({ request }: any) => {
 		const model = new ChatOpenAI({
 			apiKey: process.env.CHAT_OPEN_API!,
 			model: 'gpt-3.5-turbo',
-			temperature: 0,
+			temperature: 0.5,
 			streaming: true,
 			verbose: true,
 		});
 
-		/**
-		 * Chat models stream message chunks rather than bytes, so this
-		 * output parser handles serialization and encoding.
-		 */
 		const parser = new HttpResponseOutputParser();
 
 		const chain = RunnableSequence.from([
@@ -64,17 +60,45 @@ export const action = async ({ request }: any) => {
 			parser,
 		]);
 
-		// Convert the response into a friendly text-stream
 		const stream = await chain.stream({
 			chat_history: formattedPreviousMessages.join('\n'),
 			question: currentMessageContent,
 		});
 
-		// Respond with the stream
+		console.log(stream.constructor.name); // Should log 'ReadableStream'
+
+		const compatibleStream =
+			stream instanceof globalThis.ReadableStream
+				? stream
+				: new ReadableStream({
+						start(controller) {
+							const reader = stream.getReader();
+							function push() {
+								reader.read().then(({ done, value }) => {
+									if (done) {
+										controller.close();
+										return;
+									}
+									controller.enqueue(value);
+									push();
+								});
+							}
+							push();
+						},
+				  });
+
+		const headers = new WebFetchHeaders({
+			'Content-Type': 'text/plain; charset=utf-8',
+		});
+
+		console.log('Headers:', headers);
+
 		return new StreamingTextResponse(
-			stream.pipeThrough(createStreamDataTransformer()),
+			compatibleStream.pipeThrough(createStreamDataTransformer()),
+			{ headers },
 		);
 	} catch (e: any) {
+		console.error('Error:', e.message, e.stack);
 		return remixJson({ error: e.message }, { status: e.status ?? 500 });
 	}
 };
