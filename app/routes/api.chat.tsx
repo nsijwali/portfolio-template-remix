@@ -48,7 +48,7 @@ export const action = async ({ request }: any) => {
 		});
 
 		const parser = new HttpResponseOutputParser({
-			'Content-Type': 'text/plain',
+			contentType: 'text/plain',
 			'Access-Control-Allow-Origin': '*',
 		});
 
@@ -90,6 +90,7 @@ export const action = async ({ request }: any) => {
 
 		const headers = new WebFetchHeaders({
 			'Content-Type': 'text/plain; charset=utf-8',
+			'Access-Control-Allow-Origin': '*',
 		});
 
 		return new StreamingTextResponse(
