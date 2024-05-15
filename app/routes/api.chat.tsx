@@ -83,6 +83,11 @@ export const action = async ({ request }: any) => {
 		// Respond with the stream
 		return new StreamingTextResponse(
 			stream.pipeThrough(createStreamDataTransformer()),
+			{
+				headers: {
+					'Content-Type': 'text/event-stream',
+				},
+			},
 		);
 	} catch (e: any) {
 		return Response.json({ error: e.message }, { status: e.status ?? 500 });
