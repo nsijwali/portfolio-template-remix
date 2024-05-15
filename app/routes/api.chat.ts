@@ -41,12 +41,8 @@ export const action = async ({ request }: any) => {
 		const { messages } = await request?.json();
 
 		const formattedPreviousMessages = messages.slice(0, -1).map(formatMessage);
-
 		const currentMessageContent = messages[messages.length - 1].content;
-		// const textSplitter = new CharacterTextSplitter();
 		const docs = await loaderUser.load();
-		// const docs = new Document({ pageContent: path.toString() });
-
 		const prompt = PromptTemplate.fromTemplate(TEMPLATE);
 
 		const model = new ChatOpenAI({
@@ -79,9 +75,10 @@ export const action = async ({ request }: any) => {
 			chat_history: formattedPreviousMessages.join('\n'),
 			question: currentMessageContent,
 		});
-		console.log(stream.constructor.name); // Should log 'ReadableStream'
-		// Respond with the stream
 
+		console.log(stream.constructor.name); // Should log 'ReadableStream'
+
+		// Ensure the stream is compatible using ReadableStream from @remix-run/web-fetch
 		const compatibleStream =
 			stream instanceof ReadableStream
 				? stream
@@ -102,6 +99,7 @@ export const action = async ({ request }: any) => {
 						},
 				  });
 
+		// Respond with the stream
 		return new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
 		);
