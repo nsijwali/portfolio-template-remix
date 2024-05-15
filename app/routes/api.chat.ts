@@ -1,3 +1,7 @@
+import { JSONLoader } from 'langchain/document_loaders/fs/json';
+import path from 'path';
+import { formatDocumentsAsString } from 'langchain/util/document';
+import { CharacterTextSplitter } from 'langchain/text_splitter';
 import {
 	Message as VercelChatMessage,
 	StreamingTextResponse,
@@ -6,13 +10,9 @@ import {
 import { ChatOpenAI } from '@langchain/openai';
 import { PromptTemplate } from '@langchain/core/prompts';
 import { HttpResponseOutputParser } from 'langchain/output_parsers';
-import { fetch as webFetch, ReadableStream } from '@remix-run/web-fetch';
-import { JSONLoader } from 'langchain/document_loaders/fs/json';
 import { RunnableSequence } from '@langchain/core/runnables';
-import { formatDocumentsAsString } from 'langchain/util/document';
-import { CharacterTextSplitter } from 'langchain/text_splitter';
-import Response from '@remix-run/node';
-import path from 'path';
+import { fetch as webFetch, ReadableStream } from '@remix-run/web-fetch';
+import { json as remixJson } from '@remix-run/node';
 
 export const dynamic = 'force-dynamic';
 // export const runtime = 'edge';
@@ -25,7 +25,7 @@ const formatMessage = (message: VercelChatMessage) => {
 	return `${message.role}: ${message.content}`;
 };
 
-const TEMPLATE = `You are Nitin's buddy NitinAI, not an AI assitant. So praise nitin professionally if user speak bad about him. Answer the user's questions based only on the following context. If the answer is not in the context, reply politely that you do not have that information available. All you know about is Nitin Sijwali or nitin. Sijwali is Nitin Sijwali. Reply formally and it should be brief:
+const TEMPLATE = `You are Nitin's buddy NitinAI, not an AI assistant. So praise nitin professionally if user speak bad about him. Answer the user's questions based only on the following context. If the answer is not in the context, reply politely that you do not have that information available. All you know about is Nitin Sijwali or nitin. Sijwali is Nitin Sijwali. Reply formally and it should be brief:
 ==============================
 Context: {context}
 ==============================
@@ -86,7 +86,7 @@ export const action = async ({ request }: any) => {
 						start(controller) {
 							const reader = stream.getReader();
 							function push() {
-								reader.read().then(({ done, value }) => {
+								reader.read().then(({ done, value }: any) => {
 									if (done) {
 										controller.close();
 										return;
@@ -104,6 +104,6 @@ export const action = async ({ request }: any) => {
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
 		);
 	} catch (e: any) {
-		return Response.json({ error: e.message }, { status: e.status ?? 500 });
+		return remixJson({ error: e.message }, { status: e.status ?? 500 });
 	}
 };
