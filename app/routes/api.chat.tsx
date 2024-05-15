@@ -49,6 +49,7 @@ export const action = async ({ request }: any) => {
 
 		const parser = new HttpResponseOutputParser({
 			'Content-Type': 'text/plain',
+			'Access-Control-Allow-Origin': '*',
 		});
 
 		const chain = RunnableSequence.from([
@@ -90,8 +91,6 @@ export const action = async ({ request }: any) => {
 		const headers = new WebFetchHeaders({
 			'Content-Type': 'text/plain; charset=utf-8',
 		});
-
-		console.log('Headers:', headers);
 
 		return new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
