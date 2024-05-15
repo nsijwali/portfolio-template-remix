@@ -89,6 +89,9 @@ export const action = async ({ request }: any) => {
 
 		const headers = {
 			'Content-Type': 'text/plain; charset=utf-8',
+			raw: {
+				'Content-Type': 'text/plain; charset=utf-8',
+			},
 		};
 		console.log('Headers:', headers);
 
