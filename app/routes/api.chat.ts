@@ -1,7 +1,6 @@
 import { JSONLoader } from 'langchain/document_loaders/fs/json';
 import path from 'path';
 import { formatDocumentsAsString } from 'langchain/util/document';
-import { CharacterTextSplitter } from 'langchain/text_splitter';
 import {
 	Message as VercelChatMessage,
 	StreamingTextResponse,
@@ -49,7 +48,7 @@ export const action = async ({ request }: any) => {
 			apiKey: process.env.CHAT_OPEN_API!,
 			model: 'gpt-3.5-turbo',
 			temperature: 0.5,
-			// streaming: true,
+			streaming: true,
 			verbose: true,
 		});
 
@@ -86,7 +85,7 @@ export const action = async ({ request }: any) => {
 						start(controller) {
 							const reader = stream.getReader();
 							function push() {
-								reader.read().then(({ done, value }: any) => {
+								reader.read().then(({ done, value }) => {
 									if (done) {
 										controller.close();
 										return;
