@@ -11,14 +11,10 @@ import { PromptTemplate } from '@langchain/core/prompts';
 import { HttpResponseOutputParser } from 'langchain/output_parsers';
 import { RunnableSequence } from '@langchain/core/runnables';
 import { Headers as WebFetchHeaders } from '@remix-run/web-fetch';
-import { json as remixJson, createHeaders } from '@remix-run/node';
+import { json as remixJson } from '@remix-run/node';
 
 export const dynamic = 'force-dynamic';
 
-/**
- * Basic memory formatter that stringifies and passes
- * message history directly into the model.
- */
 const formatMessage = (message: VercelChatMessage) => {
 	return `${message.role}: ${message.content}`;
 };
@@ -35,7 +31,6 @@ assistant:`;
 export const action = async ({ request }: any) => {
 	const loaderUser = new JSONLoader(path.resolve('app/db/user.json'));
 	try {
-		// Extract the `messages` from the body of the request
 		const { messages } = await request?.json();
 		console.log('Received messages:', messages);
 
@@ -52,10 +47,6 @@ export const action = async ({ request }: any) => {
 			verbose: true,
 		});
 
-		/**
-		 * Chat models stream message chunks rather than bytes, so this
-		 * output parser handles serialization and encoding.
-		 */
 		const parser = new HttpResponseOutputParser();
 
 		const chain = RunnableSequence.from([
@@ -69,7 +60,6 @@ export const action = async ({ request }: any) => {
 			parser,
 		]);
 
-		// Convert the response into a friendly text-stream
 		const stream = await chain.stream({
 			chat_history: formattedPreviousMessages.join('\n'),
 			question: currentMessageContent,
@@ -77,7 +67,6 @@ export const action = async ({ request }: any) => {
 
 		console.log(stream.constructor.name); // Should log 'ReadableStream'
 
-		// Ensure the stream is compatible using ReadableStream from globalThis (Node.js or browser)
 		const compatibleStream =
 			stream instanceof globalThis.ReadableStream
 				? stream
@@ -98,15 +87,12 @@ export const action = async ({ request }: any) => {
 						},
 				  });
 
-		// Create headers
-		const headers = new createHeaders({
+		const headers = new WebFetchHeaders({
 			'Content-Type': 'text/plain; charset=utf-8',
 		});
 
-		// Log headers for debugging
 		console.log('Headers:', headers);
 
-		// Respond with the stream using StreamingTextResponse
 		return new StreamingTextResponse(
 			compatibleStream.pipeThrough(createStreamDataTransformer()),
 			{ headers },
