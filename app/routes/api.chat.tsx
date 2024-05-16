@@ -29,14 +29,20 @@ user: {question}
 assistant:`;
 
 export const action = async ({ request }: any) => {
+	console.log('Action triggered');
 	const loaderUser = new JSONLoader(path.resolve('app/db/user.json'));
 	try {
-		const { messages } = await request?.json();
+		// Extract the `messages` from the body of the request
+		const body = await request.text(); // Read the request body as text
+		const { messages } = JSON.parse(body); // Parse the JSON body manually
+
 		console.log('Received messages:', messages);
 
 		const formattedPreviousMessages = messages.slice(0, -1).map(formatMessage);
 		const currentMessageContent = messages[messages.length - 1].content;
 		const docs = await loaderUser.load();
+
+		console.log('Loaded docs:', docs);
 		const prompt = PromptTemplate.fromTemplate(TEMPLATE);
 
 		const model = new ChatOpenAI({
@@ -47,10 +53,7 @@ export const action = async ({ request }: any) => {
 			verbose: true,
 		});
 
-		const parser = new HttpResponseOutputParser({
-			contentType: 'text/plain',
-			'Access-Control-Allow-Origin': '*',
-		});
+		const parser = new HttpResponseOutputParser();
 
 		const chain = RunnableSequence.from([
 			{
@@ -68,33 +71,16 @@ export const action = async ({ request }: any) => {
 			question: currentMessageContent,
 		});
 
-		const compatibleStream =
-			stream instanceof globalThis.ReadableStream
-				? stream
-				: new ReadableStream({
-						async start(controller) {
-							const reader = await stream.getReader();
-							function push() {
-								reader.read().then(({ done, value }: any) => {
-									if (done) {
-										controller.close();
-										return;
-									}
-									controller.enqueue(value);
-									push();
-								});
-							}
-							push();
-						},
-				  });
+		console.log('Stream type:', stream.constructor.name); // Should log 'ReadableStream'
 
-		const headers = {
+		const headers = new WebFetchHeaders({
 			'Content-Type': 'text/plain; charset=utf-8',
-			'Access-Control-Allow-Origin': '*',
-		};
+		});
+
+		console.log('Headers:', headers);
 
 		return new StreamingTextResponse(
-			compatibleStream.pipeThrough(createStreamDataTransformer()),
+			stream.pipeThrough(createStreamDataTransformer()),
 			{ headers },
 		);
 	} catch (e: any) {
