@@ -53,7 +53,10 @@ export const action = async ({ request }: any) => {
 			verbose: true,
 		});
 
-		const parser = new HttpResponseOutputParser();
+		const parser = new HttpResponseOutputParser({
+			contentType: 'text/plain',
+			'Access-Control-Allow-Origin': '*',
+		});
 
 		const chain = RunnableSequence.from([
 			{
@@ -70,17 +73,37 @@ export const action = async ({ request }: any) => {
 			chat_history: formattedPreviousMessages.join('\n'),
 			question: currentMessageContent,
 		});
+		const compatibleStream =
+			stream instanceof globalThis.ReadableStream
+				? stream
+				: new ReadableStream({
+						async start(controller) {
+							const reader = await stream.getReader();
+							function push() {
+								reader.read().then(({ done, value }: any) => {
+									if (done) {
+										controller.close();
+										return;
+									}
+									controller.enqueue(value);
+									push();
+								});
+							}
+							push();
+						},
+				  });
+
+		const headers = {
+			'Content-Type': 'text/plain; charset=utf-8',
+			'Access-Control-Allow-Origin': '*',
+		};
 
 		console.log('Stream type:', stream.constructor.name); // Should log 'ReadableStream'
-
-		const headers = new WebFetchHeaders({
-			'Content-Type': 'text/plain; charset=utf-8',
-		});
 
 		console.log('Headers:', headers);
 
 		return new StreamingTextResponse(
-			stream.pipeThrough(createStreamDataTransformer()),
+			compatibleStream.pipeThrough(createStreamDataTransformer()),
 			{ headers },
 		);
 	} catch (e: any) {
