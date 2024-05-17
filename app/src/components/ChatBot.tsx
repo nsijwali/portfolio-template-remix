@@ -15,7 +15,6 @@ export function ChatBot() {
 
 	const { messages, input, handleInputChange, handleSubmit } = useChat({
 		api: '/api/chat',
-		streamMode: 'text',
 		onResponse: (response: Response) => {
 			console.log('Received response from server:', response);
 		},

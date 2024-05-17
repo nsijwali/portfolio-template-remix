@@ -102,7 +102,10 @@ export const action = async ({ request }: any) => {
 
 		console.log('Headers:', headers);
 
-		return new StreamingTextResponse(compatibleStream, { headers });
+		return new StreamingTextResponse(
+			compatibleStream.pipeThrough(createStreamDataTransformer()),
+			{ headers },
+		);
 	} catch (e: any) {
 		console.error('Error:', e.message, e.stack);
 		return remixJson({ error: e.message }, { status: e.status ?? 500 });
