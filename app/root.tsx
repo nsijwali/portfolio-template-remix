@@ -138,8 +138,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					}}
 				>
 					{children}
-					{/* <Analytics />
-					<SpeedInsights /> */}
+					<Analytics />
+					<SpeedInsights />
 					<ChatBot />
 				</BodyWrapper>
 				<Footer />
